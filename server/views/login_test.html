@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/stylesheets/登陆界面.css">
+    <style>
+        html,body{
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 600px;
+            height: 400px;
+            background: rgba(255,255,255,0.17);
+        }
+        #loginbtn{
+            position: absolute;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 2px;
+            top: 150px;
+            left: 5px;
+        }
+        #logonbtn{
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 2px;
+            float: left;
+            position: absolute;
+            top: 150px;
+            right: 5px;
+        }
+        #box{
+            width: 400px;
+            height:490px;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 0 auto;
+            position: relative;
+            top:25%;
+            border-radius: 10px;
+            box-shadow:-1px -2px 2px rgba(255, 255, 255, 0.53),1px -2px 2px rgba(255, 255, 255, 0.53);
+        }
+
+    </style>
+</head>
+<body >
+<div id="box">
+    <div class="hr1"></div>
+    <div class="hr2"></div>
+    <div class="title">
+        <p1 style="color: rgba(12, 11, 11, 0.81);">校园易欢迎您</p1>
+        <p2 href="">Background management system</p2>
+    </div>
+    <div class="input">
+        <form action="save.php" method="post">
+
+
+            <div class="id">
+                <em>学&nbsp&nbsp&nbsp&nbsp号:</em>
+                <input type="text" name="myname" id='userId' class="input1">
+            </div>
+            <div class="pass">
+                <em>密&nbsp&nbsp&nbsp&nbsp码:</em>
+                <input type="password" name="pass" id="userPwd" class="input1">
+            </div>
+            <input type="button" value="登陆" name="submitBtn2"  class="button" id="loginbtn">
+            <input type="button" value="注册" name="submitBtn2"  class="button" id="logonbtn">
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    let bin = (()=>{
+        function getId(ids) {
+            return document.getElementById(ids)
+        }
+        function setCookie(name,value)
+        {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + 60*60*1000);
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        }
+        let loginbtn = getId("loginbtn");
+        let logonbtn = getId("logonbtn");
+        let xhr = new XMLHttpRequest();
+
+        //监听登陆操作
+        loginbtn.addEventListener('click',function () {
+            let userId = getId("userId").value;
+            let userPwd = getId("userPwd").value;
+            if(userId==''){
+                alert("请输入用户名！");
+                return;
+            }else if(userId==''){
+                alert("请输入您的密码");
+                return
+            }
+            xhr.open('post',"http://localhost/bin/ll/users",true);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xhr.send("userId="+userId+"&userPwd="+userPwd);
+            xhr.onreadystatechange=function () {
+                if(xhr.readyState==4&&xhr.status==200){
+                    let response = JSON.parse(xhr.responseText);
+                    if(response.status=='0'){
+                        setCookie("userId",response.result.userId);
+                        setCookie("userName",response.result.userName);
+                        window.location.href="server/views/index.html";
+                    }else if(response.status=='102'){
+                        alert("用户名或密码错误，请重新输入")
+                    }else if(response.status=='103'){
+                        alert("用户名不存在，请重新输入")
+                    }
+                }
+            }
+        });
+        logonbtn.addEventListener('click',function () {
+//            user = document.getElementById('user-name').value;
+            window.location.href="/logon"
+        })
+
+    })()
+
+</script>
+</body>
+</html>
