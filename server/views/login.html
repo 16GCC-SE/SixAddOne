@@ -2,10 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <title>Title</title>
-    <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
-网页测试!
+<div id="users"></div>
+<input type="file" id="sdk">
+<input type="button" id="btn" value="提交">
+<input type="button" id="change" value="保存">
+<div id="changeuser">
+    <input type="button" id="usernew" value="提交修改信息测试">
+</div>
+
+<div id="add"></div>
+<script>
+    var src;
+    function getCookie(name)
+    {
+        var bikky = document.cookie;
+        name += "=";
+        var i = 0;
+        while (i < bikky.length)
+        {
+            var offset = i + name.length;
+            if (bikky.substring(i, offset) == name)
+            {
+                var endstr = bikky.indexOf(";", offset);
+                if (endstr == -1) endstr = bikky.length;
+                return unescape(bikky.substring(offset, endstr));
+            }
+            i = bikky.indexOf(" ", i) + 1;
+            if (i == 0) break;
+        }
+        return null;
+    }
+    window.onload = function () {
+        document.getElementById('users').innerText = getCookie("userName")+"|"+getCookie("userId");
+    }
+//上传图片
+    $('#btn').click(function () {
+        var file = document.getElementById('sdk').files[0];
+
+        var formdata = new FormData();
+        formdata.append("files",file);
+        formdata.append("userId",getCookie("userId"));
+        if(file.size<2*1024*1024){
+            $.ajax({
+
+                url:'http://localhost/bin/ll/users/adduserimg',
+                type:'POST',
+                data:formdata,
+//                dataType:"json",
+                contentType: false,
+                processData: false,
+                success:function (data) {
+                    console.log(data);
+                    src = data;
+                    s();
+                },
+                error:function (err) {
+                    console.log(err);
+                }
+
+            })
+        }
+    })
+//加载图片
+    function s() {
+        var add =  document.createElement('div');
+        add.innerHTML="<img src="+src+" alt='' >"
+        document.getElementById('add').appendChild(add);
+    }
+//修改图片
+    $('#change').click(function () {
+        var ll = {
+            "userImg":src,
+            "userId":getCookie("userId")
+        }
+        $.ajax({
+            url:'http://localhost/bin/ll/users/changeuserimg',
+            type:'POST',
+            data:ll,
+            dataType:"json",
+            success:function (data) {
+                alert("保存成功")
+            }
+        })
+    })
+//修改信息
+    $('#usernew').click(function () {
+        var nesws = {
+//            "userId":"12345",
+//            "userName":"12345",
+//            "userPwd":"12345",
+//            "userNumber":"12345",
+//            "userImg":"12345",
+//            "userSex":"12345",
+//            "userAge":"12345",
+//            "userQQ":"12345",
+//            "userPhone":"12345"
+            "goodsType":"食品",
+            "goodsName":"冰可乐",
+            "goodsPrice":"10"
+        }
+        $.ajax({
+            url:'http://localhost/bin/ll/goods/addgoods',
+            type:'POST',
+            data:nesws,
+            dataType:"json",
+            success:function (data) {
+                alert("保存成功")
+            }
+        })
+    })
+</script>
 </body>
 </html>
