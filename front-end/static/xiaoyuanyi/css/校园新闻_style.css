@@ -1,0 +1,304 @@
+.header{
+    /*height: 35px;*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.header img{
+    display: block;
+    float: left;
+    width:80px;
+    height:80px;
+    margin-left: 30px;
+}
+
+#logo{
+    display: block;
+    width: 1100px;
+    height: 80px;
+    line-height: 100px;
+    float: left;
+}
+
+.Name{
+    font-size:30px;
+    font-weight: 400;
+    /*padding-top: 8px;*/
+    margin-left: 20px;
+    font-family: 华文琥珀;
+    font-weight: bold;
+    /*font-style: italic;*/
+    letter-spacing: 2px;
+    color: #35c8c0;
+    float:left;
+    width: 300px;
+    height: 80px;
+    line-height:80px;
+}
+.tatol_right{
+    float: right;
+    margin-top: 35px;
+}
+
+.right {
+    float: left;
+    padding: 0;
+    padding: 10px;
+    /*margin: 0 10px;*/
+}
+div .right a{
+    text-decoration: none;
+    width:50px ;
+    height: 46px;
+}
+.right .fontShpe{
+    color: #00a7ea;
+    font-size: 18px;
+    font-family: 幼圆;
+}
+.tatol_right .right :hover{
+    width: 70px;
+    height: 20px;
+    border-radius: 22px;
+    color: white;
+    background:#00a7ea;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.main_func{
+    display: block;
+    text-align: left;
+    font-size: 24px;
+    color:#2ec5a6;
+    padding: 0px 0px 0px 100px;
+    position: relative;
+    font-family: "Microsoft YaHei";
+}
+
+.Menu,#head{
+    height: 50px;
+    width: 100%;
+    background:#2ec5a6;
+    font-size:20px;
+    display: block;
+    float: left;
+}
+.Menu a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: white;
+    font-family: 华文彩云;
+    font-size: 25px;
+    display: block;
+    width: 110px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+.Menu a:hover{
+    /*text-decoration: none;*/
+    margin-left: 50px;
+    color: brown;
+}
+
+#bigbox{
+    display: block;
+    width: 1020px;
+    height: auto;
+    background: white;
+    padding-top: 50px;
+    position: relative;
+    float: left;
+    margin: 0 12%;
+}
+
+#tittle{
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+
+#tittle .china{
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    font-family: 华文琥珀;
+    font-weight: normal;
+    margin: 10px auto;
+    margin-top: 50px;
+}
+
+#tittle .Eng{
+    display: block;
+    text-align: center;
+    font-size: large;
+    font-family: "Courier New";
+}
+
+#demo{display: block;}
+
+#demo .carousel-inner img {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+#bigbox .bigleft{
+    display: block;
+    float: left;
+    width: 660px;
+    height: 1000px;
+    position: relative;
+}
+
+#bigbox .tt{
+    display: block;
+    position: relative;
+    width: 660px;
+    height: 220px;
+    margin-top: 30px ;
+    margin-bottom: 20px ;
+    margin-left: 20px ;
+    background: rgba(105,125,129,0.15);
+    border: double;
+    border-radius: 15px; /*圆角*/
+    box-shadow:5px 0px 10px 0px rgba(105,125,129,0.33) ;/*边框阴影*/
+}
+
+#bigbox  h2{
+    font-family: 华文行楷;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: block;
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    border-bottom: 1px solid black;
+}
+
+#bigbox .news{
+    display: block;
+    width: 100%;
+    height: 160px;
+    font-size: large;
+}
+
+#bigbox .news li a{
+    width: 100%;
+    height: 30px;
+    color: black;
+}
+
+#bigbox .form{
+    display: block;
+    width: 280px;
+    height: 300px;
+    float: right;
+    margin: 20px 5px;
+    margin-right: 25px;
+    background: rgba(186,224,255,0.61);
+    position: relative;
+    border-radius: 15px; /*圆角*/
+    box-shadow:5px 0px 10px 5px rgba(105,125,129,0.33) ;/*边框阴影*/
+}
+
+#bigbox .form .sousuo{
+    display: block;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    position: relative;
+}
+
+#bigbox .form .f{
+    font-size: 18px;
+    display: block;
+    width: 60px;
+    position: relative;
+    text-align: center;
+    margin: 10px 5px;
+    float: left;
+}
+#bigbox .form .datetimepicker{
+    display: block;
+    width: 200px;
+    height: 26px;
+    position: relative;
+    float: left;
+    margin: 13px 2px;
+}
+#bigbox .form .tx{
+    display:block;
+    width: 180px;
+    height: 22px;
+}
+
+#bigbox .Fm{display: block;width: 100%;height: 200px;float: left;}
+
+#bigbox .Fm .biao,#bigbox .Fm .list-group{
+    display: block;
+    width: 250px;
+    height: auto;
+    position: relative;
+    float: left;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#bigbox .Fm .list-group-item {text-align: center}
+#bigbox .Fm .list-group-item a{font-family: 幼圆;font-size: large}
+
+.footing{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #646464;
+    float: left;
+}
+
+.footing .f1{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 100px;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.footing .footin{
+    color: white;
+    display: block;
+    width: 500px;
+    height: 50px;
+    float: left;
+    margin: 0 auto;
+}
+
+.footing a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.footing .p{
+    display: block;
+    text-align: center;
+    color: white;
+    width: 500px;
+    height: 40px;
+    /*float: left;*/
+}

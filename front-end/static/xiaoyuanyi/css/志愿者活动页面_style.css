@@ -1,0 +1,317 @@
+.header{
+    /*height: 35px;*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.header img{
+    display: block;
+    float: left;
+    width:80px;
+    height:80px;
+    margin-left: 30px;
+}
+
+#logo{
+    display: block;
+    width: 1100px;
+    height: 80px;
+    line-height: 100px;
+    float: left;
+}
+
+.Name{
+    font-size:30px;
+    font-weight: 400;
+    /*padding-top: 8px;*/
+    margin-left: 20px;
+    font-family: 华文琥珀;
+    font-weight: bold;
+    /*font-style: italic;*/
+    letter-spacing: 2px;
+    color: #35c8c0;
+    float:left;
+    width: 300px;
+    height: 80px;
+    line-height:80px;
+}
+.tatol_right{
+    float: right;
+    margin-top: 35px;
+}
+
+.right {
+    float: left;
+    padding: 0;
+    padding: 10px;
+    /*margin: 0 10px;*/
+}
+div .right a{
+    text-decoration: none;
+    width:50px ;
+    height: 46px;
+}
+.right .fontShpe{
+    color: #00a7ea;
+    font-size: 18px;
+    font-family: 幼圆;
+}
+.tatol_right .right :hover{
+    width: 70px;
+    height: 20px;
+    border-radius: 22px;
+    color: white;
+    background:#00a7ea;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.main_func{
+    display: block;
+    text-align: left;
+    font-size: 24px;
+    color:#2ec5a6;
+    padding: 0px 0px 0px 100px;
+    position: relative;
+    font-family: "Microsoft YaHei";
+}
+
+.Menu,#head{
+    height: 50px;
+    width: 100%;
+    background:#2ec5a6;
+    font-size:20px;
+    display: block;
+    float: left;
+}
+.Menu a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: white;
+    font-family: 华文彩云;
+    font-size: 25px;
+    display: block;
+    width: 110px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+.Menu a:hover{
+    /*text-decoration: none;*/
+    margin-left: 50px;
+    color: brown;
+}
+
+#bigbox{
+    display: block;
+    width: 1020px;
+    height: auto;
+    background: white;
+    padding-top: 50px;
+    position: relative;
+    float: left;
+    margin: 0 12%;
+}
+
+#H1{
+    display: block;
+    width: 1020px;
+    height: 80px;
+    margin: 0 auto;
+    font-family: 方正舒体;
+    position: relative;
+    font-size: 60px;
+    text-align: center;
+}
+
+#vdt img{
+    display: block;
+    width: 1020px;
+    height: 400px;
+    background-size: 100% 100%;
+}
+
+#bigbox .h1 {
+    font-size: 20px;
+    display: block;
+    width: 250px;
+    height: 30px;
+    font-weight: normal;
+    position: relative;
+    font-style: italic;
+    border-bottom: 1px solid;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+#bigbox .list{
+    display: block;
+    width:100%;
+    height: 250px;
+}
+
+#bigbox .list li {
+    padding-left: 30px;
+    width: 450px;
+    float: left;
+}
+
+#bigbox .list .randimg{
+    float: left;
+    display: block;
+    margin: 5px auto;
+    width: 150px;
+    height: 100px;
+}
+
+#bigbox .list dt a{
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 25px;
+    line-height: 25px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-y: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    margin: 5px 10px;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bigbox .list dd{
+    position: relative;
+    margin: 0 10px;
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    line-height: 18px;
+    width: 250px;
+    height: 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+#volunteer,#rule{
+    display: block;
+    width: 95%;
+    height: 180px;
+    background: rgba(141,141,137,0.28);
+    margin: auto;
+}
+
+#volunteer .vo_list,#rule .ru_list{
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    height: 160px;
+    position: absolute;
+}
+
+#volunteer .vo_list li{
+    width: 120px;
+    height: 150px;
+    display: block;
+    float: left;
+    margin:0 10px;
+    position: relative;
+}
+
+#volunteer .vo_list .pic{
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+#volunteer .vo_list .Name{
+    width: 100px;
+    height: auto;
+    text-align: center;
+}
+
+#rule .ru_list li{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#rule .ru_list a{
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: black;
+}
+
+#rule .ru_list a:hover{
+    text-decoration: underline;
+}
+
+#bu1,#bu2{
+    width: 980px;
+    height: 30px;
+    font-size: medium;
+    display: block;
+    margin: 0 auto;
+}
+
+#bu3{
+    width: 100px;
+    height: 100px;
+    display: block;
+    font-size: medium;
+}
+
+.footing{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #646464;
+    float: left;
+}
+
+.footing .f1{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 100px;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.footing .footin{
+    color: white;
+    display: block;
+    width: 500px;
+    height: 50px;
+    float: left;
+    margin: 0 auto;
+}
+
+.footing a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.footing .p{
+    display: block;
+    text-align: center;
+    color: white;
+    width: 500px;
+    height: 40px;
+    /*float: left;*/
+}

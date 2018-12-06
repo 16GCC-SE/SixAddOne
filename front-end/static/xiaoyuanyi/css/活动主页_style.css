@@ -1,0 +1,365 @@
+.header{
+    /*height: 35px;*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.header img{
+    display: block;
+    float: left;
+    width:80px;
+    height:80px;
+    margin-left: 30px;
+}
+
+#logo{
+    display: block;
+    width: 1100px;
+    height: 80px;
+    line-height: 100px;
+    float: left;
+}
+
+.Name{
+    font-size:30px;
+    font-weight: 400;
+    /*padding-top: 8px;*/
+    margin-left: 20px;
+    font-family: 华文琥珀;
+    font-weight: bold;
+    /*font-style: italic;*/
+    letter-spacing: 2px;
+    color: #35c8c0;
+    float:left;
+    width: 300px;
+    height: 80px;
+    line-height:80px;
+}
+.tatol_right{
+    float: right;
+    margin-top: 35px;
+}
+
+.right {
+    float: left;
+    padding: 0;
+    padding: 10px;
+    /*margin: 0 10px;*/
+}
+div .right a{
+    text-decoration: none;
+    width:50px ;
+    height: 46px;
+}
+.right .fontShpe{
+    color: #00a7ea;
+    font-size: 18px;
+    font-family: 幼圆;
+}
+.tatol_right .right :hover{
+    width: 70px;
+    height: 20px;
+    border-radius: 22px;
+    color: white;
+    background:#00a7ea;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.main_func{
+    display: block;
+    text-align: left;
+    font-size: 24px;
+    color:#2ec5a6;
+    padding: 0px 0px 0px 100px;
+    position: relative;
+    font-family: "Microsoft YaHei";
+}
+
+.Menu,#head{
+    height: 50px;
+    width: 100%;
+    background:#2ec5a6;
+    font-size:20px;
+    display: block;
+    float: left;
+}
+.Menu a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: white;
+    font-family: 华文彩云;
+    font-size: 25px;
+    display: block;
+    width: 110px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+.Menu a:hover{
+    /*text-decoration: none;*/
+    margin-left: 50px;
+    color: brown;
+}
+
+#bigbox{
+    display: block;
+    width: 1020px;
+    height: auto;
+    background: white;
+    padding-top: 50px;
+    position: relative;
+    float: left;
+    margin: 0 12%;
+}
+
+#bchead,#behead{
+    font-weight: bolder;
+    text-align: center;
+    display: block;
+    width: 980px;
+    position: relative;
+}
+
+#bchead{margin: 30px auto 0;font-family: 方正舒体;font-size: 60px;}
+#behead{margin: 0 auto;font-family: "Century Schoolbook";font-size: 20px; }
+
+#ShoolActivitise{
+    width: 980px;
+    height: 400px;
+    display: block;
+    margin: 60px auto;/*外边距*/
+    border: 4px solid black;
+}
+
+#HEADS{
+    display: block;
+    margin: 150px auto 50px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 方正舒体;
+    font-weight: bold;
+}
+
+#Total{
+    margin: 20px auto;
+    display: block;
+    height: 250px;
+    width: 960px;
+    border: 2px dashed black;
+}
+
+.Shetuan,
+.Volunteer,
+.College{
+    position:relative;
+    display: block;
+    width: 300px;
+    height: 230px;
+    background-size: 100% 100%;
+    float: left;
+    margin: 10px;
+}
+
+.Shetuan{background-image: url(../img/社团活动.jpg);  }
+.Volunteer{background-image: url(../img/志愿者活动.jpg);  }
+.College{background-image: url(../img/学院活动.jpg);  }
+
+.Shetuan a, .Shetuan span,
+.Volunteer a, .Volunteer span,
+.College a, .College span{
+    display:none;/*隐藏*/
+    text-decoration:none;
+}
+
+.Shetuan  .text,
+.Volunteer .text,
+.College .text{
+    text-align:center;
+    font-weight: 300;
+    font-size: 50px;
+    font-family: 华文琥珀;
+}
+
+.Shetuan  .text{color:#ff650a}
+.Volunteer  .text{color: #ff130a}
+.College  .text{color:#14a409}
+
+.Shetuan:hover a.text,
+.Volunteer:hover a.text,
+.College:hover a.text
+{
+    cursor:pointer;/*鼠标悬停的效果*/
+    position:absolute;
+    /*z-index 属性设置元素的堆叠顺序，正数离用户越近*/
+    width:100%; height:100%; z-index:100;
+    display:block;
+    margin:30% auto;
+}
+
+.Shetuan:hover span,
+.Volunteer:hover span,
+.College:hover span{
+    display:block;
+    position:absolute;
+    width:300px;
+    height:230px;
+    z-index:10;
+    background: #999999;
+    opacity: 0.5;/*转化图像的透明程度为50*/
+}
+
+.Recent{
+    position: relative;
+    margin: 0 auto;
+    width: 980px;
+    height: 800px;
+    display: block;
+}
+
+#title{
+    display: block;
+    position: relative;
+    font-family: 方正舒体;
+    font-size: 40px;
+    font-weight: bold;
+    width: 980px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    text-align: center;
+    border-bottom: 1px dashed black;
+}
+
+.huodong1,
+.huodong2,
+.huodong3{
+    display: block;
+    width: 980px;
+    height: 180px;
+    float: left;
+    margin: 20px auto;
+    border-bottom: 1px dashed black; /*在底部加上1像素黑色虚线边框*/
+}
+
+.huodong1 .stitle,
+.huodong2 .stitle,
+.huodong3 .stitle{
+    position: relative;
+    float: left;
+    display: block;
+    width: 70px;
+    height: 150px;
+    line-height: 30px; /*设置行高，控制垂直显示*/
+    margin: 0 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 方正舒体;
+    text-align: center;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.huodong1 .img1,
+.huodong2 .img2,
+.huodong3 .img3{
+    position: relative;
+    width:200px;
+    height: 150px;
+    margin:0 20px;
+    display: block;
+    float: left;
+}
+
+.huodong1 div.sthuodong,
+.huodong2 div.zyzhuodong,
+.huodong3 div.xyhuodong
+{
+    position: relative;
+    display: block;
+    width: 600px;
+    height: 150px;
+    margin: 0 auto;
+    float: right;
+}
+
+.huodong1 a,
+.huodong2 a,
+.huodong3 a
+{
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
+    font-family: 幼圆;
+    font-size:20px;
+    text-align: left;
+    float: left;
+    color: black;
+}
+
+.huodong1 a:hover,/*鼠标滑过显示*/
+.huodong2 a:hover,
+.huodong3 a:hover{
+    color: #ff650a;
+}
+
+/*鼠标点击后显示*/
+/*.huodong1 a:visited,
+.huodong2 a:visited,
+.huodong3 a:visited{
+    color: rgba(105,125,129,0.4);
+}*/
+
+.footing{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #646464;
+    float: left;
+}
+
+.footing .f1{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 100px;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.footing .footin{
+    color: white;
+    display: block;
+    width: 500px;
+    height: 50px;
+    float: left;
+    margin: 0 auto;
+}
+
+.footing a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.footing .p{
+    display: block;
+    text-align: center;
+    color: white;
+    width: 500px;
+    height: 40px;
+    /*float: left;*/
+}
+

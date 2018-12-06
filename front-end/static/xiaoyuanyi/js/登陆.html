@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <title>注册网站</title>
+</head>
+<style >
+    body{
+        overflow: hidden;
+    }
+    .Typesetting{
+        position: absolute;
+        width:1500px;
+        height: 900px;
+    }
+    .Typesetting2{
+        position: absolute;
+        left: 16%;
+        width: 100%;
+        height: 800px;
+
+    }
+    .Typeseting1{
+        position: absolute;
+        left:35%;
+        width: 35%;
+        background-color: blue;
+
+    }
+    .picture{
+        position: absolute;
+        width: 35%;
+        height:900px;
+    }
+    .word{
+        position: absolute;
+        top: 100px;
+        float:left;
+        font-size: 48px
+
+    }
+    .word1{
+        position: absolute;
+        top:165px;
+        float: left;
+        font-size: 32px;
+        font-weight: 150px;
+    }
+    .Username{
+        position: absolute;
+        top:250px;
+        font-size: 30px;
+
+    }
+    .password{
+        position: absolute;
+        top: 350px;
+        font-size: 30px;
+    }
+    .word2{
+        position: absolute;
+        top:20px;
+        left :65%;
+        font-size: 20px;
+    }
+    ul li{
+        display: inline-block;
+
+    }
+    .inputNB{
+        position: absolute;
+        top:440px;
+
+    }
+    .inputnumbre{
+        position: absolute;
+        left:230px;
+        top:440px;
+        font-size: 30px;
+    }
+    .word3{
+        position: absolute;
+        top: 495px;
+        color: #66a0b3;
+    }
+    .button{
+        position: absolute;
+        top: 545px;
+        font-size: 25px;
+        width: 450px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        float: left;
+        background-color: lightblue;
+        border-radius:10px;
+
+    }
+    .word4{
+        position: absolute;
+        top: 615px;
+        color: #495858;
+    }
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 96%;
+        height: 769PX;
+    }
+</style>
+<body>
+<div class="Typesetting">
+    <div class="picture">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- 指示符 -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- 轮播图片 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="http://feizhuliu.vipyl.com/attached/image/20130226/20130226172026912691.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="http://img.dahe.cn/qf/2015/4/18/5139BZX8S.jpg-xiao">
+                </div>
+                <div class="carousel-item">
+                    <img src="http://img.orz520.com/t0179a9e33b35b377bb.jpg">
+                </div>
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    <div class="Typesetting2" >
+        <div class="word2">
+            <ul style="margin-right: 300px">
+                <img src="../img/logo.png" width="150px" height="150px" style="margin-right:100px">
+            </ul>
+        </div>
+        <div class="Typeseting1">
+
+            <div class="word">
+                <b>
+                    欢迎注册校园易
+                </b>
+            </div>
+            <div class="word1">
+                每一天，乐在充实。
+            </div>
+            <form  action="">
+                <div class="Username">
+                    <input type="text" name="username" placeholder="Username" style="width: 450px;height: 45px;border-radius:10px;font-size: 20px">
+                </div>
+                <div class="password">
+                    <input type="text" name="password" placeholder="password" style="width: 450px;height: 45px;border-radius:10px;font-size: 20px">
+                </div>
+                <div class="inputNB">
+                    <input type="readonly"  placeholder="+86" name="fixedNB" style="width: 130px;height: 45px;border-radius:10px;font-size: 20px;">
+
+                </div>
+                <div class="inputnumbre">
+                    <input type="readonly" placeholder="电话号码" name="fixedNB" style="width: 220px;height: 45px;border-radius:10px;font-size: 20px;">
+                </div>
+                <div class="word3">可以通过电话号码找回密码
+                </div>
+                <div class="button">
+                    <a href="index.html" style="text-decoration: none;">登录</a>
+                </div>
+            </form>
+            <div class="word4">
+                <input type="checkbox" >
+                <label>我已阅读并同意相关服务条款和隐私政策</label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

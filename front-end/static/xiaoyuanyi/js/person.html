@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <img src="../img/logo.png" width="100px">
+    </div>
+    <div class="name" id="title_name">校园易平台</div>
+    <div id="min_title">——让生活变得更美好</div>
+    <div id="hearder_right">
+        <div id="zhuce">注册</div>
+        <div id="denglu">登录</div>
+        <div id="user"><a href="../src/private_infomation.html">我的</a></div>
+    </div>
+    <!-- <div class="search">
+        <i></i><input class="search_text form-control" type="text" name="" placeholder="请输入关键字"><button class="btn btn-danger" type="submit">确定</button>
+    </div> -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="icon_search"></i></div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键字" required="required">
+            </div>
+        </div><button type="submit" class="btn btn-danger">确 定</button>
+    </form>
+</div>
+
+<style>
+    .auto{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .weizhi_title{
+     font-size: 15px;
+    color: #666666;
+    background: url(../img/坐标.png) no-repeat center left;
+    padding-left: 27px;
+    margin: 39px 0;
+    }
+    .weizhi_title a:hover {
+    color: #e83a17;
+    }
+    a:hover{
+        text-decoration: none;
+        color: red;
+    }
+    body {
+    color: #333;
+    font-family: "微软雅黑","宋体",Arial;
+	}
+	ul{
+		margin:0;
+	}
+</style>
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>      
+</div>
+
+	<div class="auto">
+		
+	
+	<aside class="left_aside">
+		
+		<ul class="left_aside_ul">
+			 
+			<li><a href="#"><span class="user_icon01">用户中心</span></a></li>
+			<li><a href="#"><span class="user_icon02">发布</span></a></li>
+			<li><a href="#"><span class="user_icon03">我的收藏</span></a></li>
+			<li><a href="#"><span class="user_icon04">我的购物车</span></a></li>
+			<li><a href="#"><span class="user_icon05">我的记录</span></a></li>
+			<li><a href="#"><span class="user_icon06">我的订单</span></a></li>
+			<li><a href="#"><span class="user_icon07">我的钱包</span></a></li>
+			<li><a href="#"><span class="user_icon08">消息中心</span></a></li>
+			<li><a href="#"><span class="user_icon09">个人设置</span></a></li>
+		</ul>
+	</aside>
+
+
+	</div>
+
+
+<script>
+	$(document).ready(function(){
+		//用户中心--
+		document.getElementsByClassName('left_aside_ul')[0].children[0].classList.add('class_js');
+		document.getElementsByClassName('user_icon01')[0].classList.add('class_foucus');
+
+
+	})
+
+
+
+</script>	
+<style>
+	.left_aside{
+		width: 205px;
+		border-bottom: 1px #e9e9e9 solid;	
+		float: left;
+	}
+	.left_aside_ul{
+		width: 100%;
+		height: auto;
+	}
+	.left_aside_ul li{
+		cursor: pointer;
+		color: #333;
+		width: 100%;
+		height: 70px;
+		line-height: 70px;
+		font-size: 14px;
+		margin: 0 0 -1px 0px;
+		border: 1px #e9e9e9 solid;
+	}
+	.left_aside_ul li:hover{
+		border: 1px #e83a17 solid;
+		background-color: #e83a17;
+	}	
+	.class_js{
+		border: 1px #e83a17 solid;
+		background-color: #e83a17;
+		color: white;
+	}
+	.left_aside_ul li:hover span{
+		color: white;
+	}
+	.left_aside_ul li a{
+	display: block;
+    height: 69px;
+    line-height: 69px;
+    border-bottom: 1px #e9e9e9 solid;
+    font-size: 14px;
+    color: #333333;
+    width: 153px;
+    border-bottom: 0;
+    padding-left: 50px;
+	}
+	.left_aside_ul li span{
+		padding-left: 30px;
+	}
+	.user_icon01_{
+		background: url('../img/icon_person01/yonghu.png') no-repeat left center;
+	}
+	.user_icon02_{
+		background: url('../img/icon_person01/发布.png') no-repeat left center;
+	}
+	.user_icon03_{
+		background: url('../img/icon_person01/shoucang.png') no-repeat left center;
+	}
+	.user_icon04_{
+		background: url('../img/icon_person01/gouwucheman.png') no-repeat left center;
+	}
+	.user_icon05_{
+		background: url('../img/icon_person01/jilumian.png') no-repeat left center;
+	}
+	.user_icon06_{
+		background: url('../img/icon_person01/dingdan2.png') no-repeat left center;
+	}
+	.user_icon07_{
+		background: url('../img/icon_person01/tianchongxing-.png') no-repeat left center;
+	}
+	.user_icon08_{
+		background: url('../img/icon_person01/xiaoxi.png') no-repeat left center;
+	}
+	.user_icon09_{
+		background: url('../img/icon_person01/shezhi.png') no-repeat left center;
+	}
+	.user_icon01{
+		background: url('../img/icon_person01/yonghu.png') no-repeat left center;
+	}
+	.user_icon02{
+		background: url('../img/icon_person01/发布.png') no-repeat left center;
+	}
+	.user_icon03{
+		background: url('../img/icon_person01/shoucang.png') no-repeat left center;
+	}
+	.user_icon04{
+		background: url('../img/icon_person01/gouwucheman.png') no-repeat left center;
+	}
+	.user_icon05{
+		background: url('../img/icon_person01/jilumian.png') no-repeat left center;
+	}
+	.user_icon06{
+		background: url('../img/icon_person01/dingdan2.png') no-repeat left center;
+	}
+	.user_icon07{
+		background: url('../img/icon_person01/tianchongxing-.png') no-repeat left center;
+	}
+	.user_icon08{
+		background: url('../img/icon_person01/xiaoxi.png') no-repeat left center;
+	}
+	.user_icon09{
+		background: url('../img/icon_person01/shezhi.png') no-repeat left center;
+	}
+
+	.class_foucus{
+	color: white;
+    background: url('../img/icon_person02/yonghu.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(1):hover .user_icon01{
+	color: white;
+    background: url('../img/icon_person02/yonghu.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(2):hover .user_icon02{
+    background: url('../img/icon_person02/发布.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(3):hover .user_icon03{
+    background: url('../img/icon_person02/shoucang.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(4):hover .user_icon04{
+    background: url('../img/icon_person02/gouwucheman.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(5):hover .user_icon05{
+    background: url('../img/icon_person02/jilumian.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(6):hover .user_icon06{
+    background: url('../img/icon_person02/dingdan2.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(7):hover .user_icon07{
+    background: url('../img/icon_person02/tianchongxing-.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(8):hover .user_icon08{
+    background: url('../img/icon_person02/xiaoxi.png') no-repeat left center;
+	}
+	.left_aside_ul li:nth-child(9):hover .user_icon09{
+    background: url('../img/icon_person02/shezhi.png') no-repeat left center;
+	}
+</style>
+
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="design">
+    <img src="../img/bg3.jpg" alt="">
+</div>
+<div ng-include="'/footer_baozhang.html'" class="ng-scope">
+    <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
+        <div class="baozhang_content auto">
+            <div class="baozhang_div">
+                <img src="../img/支付.png">
+                <h2>安全支付</h2>
+                <p>支持支付宝微信网银支付</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/精品.png">
+                <h2>至臻精品</h2>
+                <p>顶级设计师创作至臻精品</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/客服.png">
+                <h2>客服支持</h2>
+                <p>强大的客服团队为您服务</p>
+            </div>
+            <div class="baozhang_div baozhang_lastdiv">
+                <img src="../img/服务.png">
+                <h2>服务至上</h2>
+                <p>真诚、诚信、用心服务</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footing">
+    <div class="f1">
+                <span class="footin">
+                    <a href="#">平台简介&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">问题反馈&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">联系我们&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">我要开店&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">加入我们 </a>
+                </span>
+        <div class="p">校园易平台 @ 信息学院软一般网页爱好者</div>
+    </div>
+</div>
+
+
+
+<div id="top_fixed" class="scroll_wrap">
+    <div class="scroll_content auto">
+        <div class="scroll_logo"><a class="totop" href="/"><img src="../img/logo.png"></a>
+            <span>校园分享平台</span></div>
+        <form class="form-inline scroll_wrap_group">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="icon_search"></i></div>
+                    <input type="text" class="scroll_wrap_group_input" class="form-control" placeholder="请输入关键字" required="required">
+                </div>
+            </div><button type="submit" class="btn btn-danger scroll_wrap_group_button">确 定</button>
+        </form>
+        <div class="clear"></div>
+    </div>
+</div>
+ 
+<script>
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                console.log(111);
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    
+	$(function(){
+			$('left_aside_ul li').click(function(){
+				
+			})
+		})
+
+
+    })
+	window.onload=function(){
+            let ali = document.getElementsByClassName('left_aside_ul')[0].getElementsByTagName('li');
+         alert("message?: DOMString")
+        	alert(ali.length)
+	for(let i = 0; i <=ali.length; i++){
+
+		ali[i].onclick = function(){
+			alert(ali.length)
+            	// ali[i].getElementsByTagName('span')[0].style.color = 'white';
+            	// ali[i].style.background = '#e83a17';
+            	// ali[i].classList.add('class_js');
+            	// var class_name = "user_icon0" + (i+1);
+            	// alert(class_name);
+            	// ali[i].getElementsByTagName('li').removeClass("class_name");
+		}
+	}		
+	}
+
+ //    span    .user_icon01{
+	// 	background: url('../img/icon_person01/yonghu.png') no-repeat left center;
+	// }
+	
+</script>
+</body>
+</html>

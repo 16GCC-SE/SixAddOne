@@ -1,0 +1,238 @@
+.header{
+    /*height: 35px;*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.header img{
+    display: block;
+    float: left;
+    width:80px;
+    height:80px;
+    margin-left: 30px;
+}
+
+#logo{
+    display: block;
+    width: 1100px;
+    height: 80px;
+    line-height: 100px;
+    float: left;
+}
+
+.Name{
+    font-size:30px;
+    font-weight: 400;
+    /*padding-top: 8px;*/
+    margin-left: 20px;
+    font-family: 华文琥珀;
+    font-weight: bold;
+    /*font-style: italic;*/
+    letter-spacing: 2px;
+    color: #35c8c0;
+    float:left;
+    width: 300px;
+    height: 80px;
+    line-height:80px;
+}
+.tatol_right{
+    float: right;
+    margin-top: 35px;
+}
+
+.right {
+    float: left;
+    padding: 0;
+    padding: 10px;
+    /*margin: 0 10px;*/
+}
+div .right a{
+    text-decoration: none;
+    width:50px ;
+    height: 46px;
+}
+.right .fontShpe{
+    color: #00a7ea;
+    font-size: 18px;
+    font-family: 幼圆;
+}
+.tatol_right .right :hover{
+    width: 70px;
+    height: 20px;
+    border-radius: 22px;
+    color: white;
+    background:#00a7ea;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.main_func{
+    display: block;
+    text-align: left;
+    font-size: 24px;
+    color:#2ec5a6;
+    padding: 0px 0px 0px 100px;
+    position: relative;
+    font-family: "Microsoft YaHei";
+}
+
+.Menu,#head{
+    height: 50px;
+    width: 100%;
+    background:#2ec5a6;
+    font-size:20px;
+    display: block;
+    float: left;
+}
+.Menu a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: white;
+    font-family: 华文彩云;
+    font-size: 25px;
+    display: block;
+    width: 110px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+.Menu a:hover{
+    /*text-decoration: none;*/
+    margin-left: 50px;
+    color: brown;
+}
+
+#bigbox{
+    display: block;
+    width: 1020px;
+    height: auto;
+    background: white;
+    padding-top: 50px;
+    position: relative;
+    float: left;
+    margin: 0 12%;
+}
+
+#H1{
+    display: block;
+    width: 1020px;
+    height: 80px;
+    margin: 0 auto;
+    font-family: 方正舒体;
+    position: relative;
+    font-size: 60px;
+    text-align: center;
+}
+
+#vdt img{
+    display: block;
+    width: 1020px;
+    height: 400px;
+    background-size: 100% 100%;
+}
+
+#bigbox .h1 {
+    font-size: 20px;
+    display: block;
+    width: 250px;
+    height: 30px;
+    font-weight: normal;
+    position: relative;
+    font-style: italic;
+    border-bottom: 1px solid;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+#bigbox .block{
+    display: block;
+    width: 100%;
+    height: 130px;
+}
+
+#bigbox .block .pic{
+    width: 150px;
+    height: 120px;
+    display: block;
+    border: 1px solid;
+    margin: 0 50px;
+    float: left;
+}
+
+#bigbox .block .active{
+    display: block;
+    width:700px;
+    height: 120px;
+    margin: 0 20px;
+}
+
+#bigbox .block .active li,#bigbox .block .active a{
+    width: 700px;
+    height: 30px;
+}
+
+#bigbox .block .active a{
+    display: block;
+    margin: 0 auto;
+    font-family: 幼圆;
+    font-size:20px;
+    text-align: left;
+    color: black;
+    text-decoration: none;
+}
+
+#bigbox .block .active a:hover{
+    text-decoration: underline;
+    color: #ff130a;
+}
+
+.footing{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #646464;
+    float: left;
+}
+
+.footing .f1{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 100px;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.footing .footin{
+    color: white;
+    display: block;
+    width: 500px;
+    height: 50px;
+    float: left;
+    margin: 0 auto;
+}
+
+.footing a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.footing .p{
+    display: block;
+    text-align: center;
+    color: white;
+    width: 500px;
+    height: 40px;
+    /*float: left;*/
+}

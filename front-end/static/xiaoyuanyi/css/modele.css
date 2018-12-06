@@ -1,0 +1,295 @@
+body{
+    overflow-x: hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.clearfix:after {
+    content: " ";
+    display: table;
+    clear:  both;
+}
+.header{
+    width: 100%;
+    float: left;
+}
+.form-inline{
+    margin-top: 40px;
+}
+.icon_search{
+    background: url("../img/搜索.png") no-repeat;
+}
+.search_text{
+    width: 210px;
+    height: 34px;
+}
+.search_button{
+    height: 34px;
+    width: 90px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    background: rgb(232, 58, 23);
+    border-radius: 4px;
+}
+.input-group-addon{
+    padding: 0;
+    padding-left: 7px;
+}
+.icon_search{
+    display: inline-block;
+    width: 26px;
+    height: 19px;
+}
+.Name{
+    font-size:30px;
+    font-weight: 400;
+    /*padding-top: 8px;*/
+    margin-left: 20px;
+    font-family: 华文琥珀;
+    font-weight: bold;
+    /*font-style: italic;*/
+    letter-spacing: 2px;
+    color: #35c8c0;
+    float:left;
+    width: 300px;
+    height: 80px;
+    line-height:80px;
+}
+.tatol_right{
+    float: right;
+    margin-top: 35px;
+}
+
+
+#header{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background: #fbfbfb;
+}
+#logo{
+    position: relative;
+    margin-left: 100px;
+    float: left;
+    top: -10px;
+}
+#title_name{
+    font-size: 50px;
+    color: hsla(-8, -3%, 92%, 0.5);
+    font-weight: 600;
+    line-height: 80px;
+    float: left;
+    text-shadow: 1px 1px 0px #000;
+    font-family: 楷体;
+    position: relative;
+    margin-left: 250px;
+
+}
+
+#min_title{
+    margin-right: 30px;
+    font-size: 28px;
+    margin-left: 10px;
+    float: left;
+    font-family:楷体;
+    color: #333;
+    height:100%;
+    position: relative;
+    top: 35px;
+}
+#hearder_right{
+    position: absolute;
+    width: 183px;
+    height: 30px;
+    /*background-color: rgba(51, 195, 255, 0.26);*/
+    color: #333;
+    right: -1px;
+}
+#hearder_right div{
+    width: 60px;
+    height: 27px;
+    line-height: 27px;
+    float: left;
+    text-align: center;
+    border-right: 1px solid rgba(33, 33, 33, 0.14);
+    cursor: pointer;
+}
+#hearder_right div:hover{
+    background-color: rgba(255, 255, 255, 0.23);
+}
+
+
+
+/*固定导航行*/
+#top_fixed {
+        display: none; 
+    }
+     #top_fixed form{
+        width: 658px;
+    }
+    .scroll_wrap .form-inline {
+        color: rgb(153, 153, 153);
+        margin-top: 15px;
+    }
+
+    .form-inline {
+        display: block;
+    }
+
+    .scroll_wrap_group {
+        width: 655px;
+    }
+
+    .scroll_content {
+        position: relative;
+        height: 100%;
+    }
+
+    .scroll_logo {
+        width: 200px;
+        height: 79px;
+    }
+
+    .scroll_logo span {
+        position: absolute;
+        bottom: -3px;
+    }
+
+    .scroll_logo, .scroll_wrap_group {
+        position: absolute;
+    }
+
+    .scroll_wrap_group {
+        right: 60px;
+    }
+
+    .scroll_wrap_group_input {
+        width: 450px;
+        height: 52px;
+
+    }
+
+    .scroll_wrap_group_button {
+        width: 150px;
+        height: 52px;
+    }
+
+    .scroll_logo img {
+        width: 80px;
+        position: absolute;
+        top: -9px;
+    }
+
+    .scroll_wrap {
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top: 0px;
+        z-index: 9999;
+        box-shadow: rgb(236, 235, 235) 0px 2px 2px;
+        background: rgb(251, 251, 251);
+        border-bottom: 1px solid rgb(214, 214, 214);
+    }
+
+    .auto {
+        width: 1200px;
+        margin: 0px auto;
+    }
+    .clear {
+        clear: both;
+    }
+.baozhang_wrap_fbfbfb {
+        background: #fbfbfb;
+    }
+
+    .baozhang_content {
+        height: 200px;
+    }
+
+    .baozhang_wrap {
+        background: #ffffff;
+        height: 200px;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .baozhang_div {
+        width: 299px;
+        height: 90px;
+        border-right: 1px #d9d9d9 solid;
+        float: left;
+        margin-top: 50px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .baozhang_div h2 {
+        font-size: 14px;
+        color: #333333;
+        margin: 5px 0;
+    }
+
+    .baozhang_div p {
+        font-size: 12px;
+        color: #999999;
+    }
+
+
+    .design img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*footer*/
+    .footing{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-color: #646464;
+    float: left;
+}
+
+.footing .f1{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 100px;
+    padding-top: 25px;
+    margin: 0 auto;
+}
+
+.footing .footin{
+    color: white;
+    display: block;
+    width: 500px;
+    height: 50px;
+    float: left;
+    margin: 0 auto;
+}
+
+.footing a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.footing .p{
+    display: block;
+    text-align: center;
+    color: white;
+    width: 500px;
+    height: 40px;
+    /*float: left;*/
+}

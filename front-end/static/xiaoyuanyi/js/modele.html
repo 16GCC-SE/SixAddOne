@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <img src="../img/logo.png" width="100px">
+    </div>
+    <div class="name" id="title_name">校园易平台</div>
+    <div id="min_title">——让生活变得更美好</div>
+    <div id="hearder_right">
+        <div id="zhuce">注册</div>
+        <div id="denglu">登录</div>
+        <div id="user"><a href="../src/private_infomation.html">我的</a></div>
+    </div>
+    <!-- <div class="search">
+        <i></i><input class="search_text form-control" type="text" name="" placeholder="请输入关键字"><button class="btn btn-danger" type="submit">确定</button>
+    </div> -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="icon_search"></i></div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键字" required="required">
+            </div>
+        </div><button type="submit" class="btn btn-danger">确 定</button>
+    </form>
+</div>
+
+<style>
+    .auto{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .weizhi_title{
+     font-size: 15px;
+    color: #666666;
+    background: url(../img/坐标.png) no-repeat center left;
+    padding-left: 27px;
+    margin: 39px 0;
+    }
+    .weizhi_title a:hover {
+    color: #e83a17;
+    }
+    a:hover{
+        text-decoration: none;
+        color: red;
+    }
+</style>
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>      
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="design">
+    <img src="../img/bg3.jpg" alt="">
+</div>
+<div ng-include="'/footer_baozhang.html'" class="ng-scope">
+    <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
+        <div class="baozhang_content auto">
+            <div class="baozhang_div">
+                <img src="../img/支付.png">
+                <h2>安全支付</h2>
+                <p>支持支付宝微信网银支付</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/精品.png">
+                <h2>至臻精品</h2>
+                <p>顶级设计师创作至臻精品</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/客服.png">
+                <h2>客服支持</h2>
+                <p>强大的客服团队为您服务</p>
+            </div>
+            <div class="baozhang_div baozhang_lastdiv">
+                <img src="../img/服务.png">
+                <h2>服务至上</h2>
+                <p>真诚、诚信、用心服务</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footing">
+    <div class="f1">
+                <span class="footin">
+                    <a href="#">平台简介&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">问题反馈&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">联系我们&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">我要开店&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">加入我们 </a>
+                </span>
+        <div class="p">校园易平台 @ 信息学院软一般网页爱好者</div>
+    </div>
+</div>
+
+
+
+<div id="top_fixed" class="scroll_wrap">
+    <div class="scroll_content auto">
+        <div class="scroll_logo"><a class="totop" href="/"><img src="../img/logo.png"></a>
+            <span>校园分享平台</span></div>
+        <form class="form-inline scroll_wrap_group">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="icon_search"></i></div>
+                    <input type="text" class="scroll_wrap_group_input" class="form-control" placeholder="请输入关键字" required="required">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger scroll_wrap_group_button">确 定</button>
+        </form>
+        <div class="clear"></div>
+    </div>
+</div>
+ 
+<script>
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                console.log(111);
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+</script>
+</body>
+</html>
