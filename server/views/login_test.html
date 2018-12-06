@@ -113,7 +113,7 @@
                     if(response.status=='0'){
                         setCookie("userId",response.result.userId);
                         setCookie("userName",response.result.userName);
-                        window.location.href="server/views/index.html";
+                        window.location.href="/main";
                     }else if(response.status=='102'){
                         alert("用户名或密码错误，请重新输入")
                     }else if(response.status=='103'){
