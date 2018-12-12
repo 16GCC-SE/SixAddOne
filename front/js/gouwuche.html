@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script src="../js/vendor/public.js"></script>
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+ 
+
+<style type="text/css">
+.title-img img {
+	width: 150px;
+}
+
+.title-img {
+	font-size: 25px;
+	color: #80a281;
+}
+
+.table th {
+	color: grey;
+	text-align: center
+}
+
+.table img {
+	width: 100px;
+}
+
+.table td {
+	font-size: 12px;
+	text-align: center
+}
+
+.navbar-header {
+	left: 60%;
+	position: relative;
+	width: 350px;
+	top: 15px;
+}
+ .auto {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .weizhi_title {
+        font-size: 15px;
+        color: #666666;
+        background: url(../img/坐标.png) no-repeat center left;
+        padding-left: 27px;
+        margin: 39px 0;
+    }
+
+    .weizhi_title a:hover {
+        color: #e83a17;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: red;
+    }
+</style>
+</head>
+<body onload="checkCookie()">
+
+<div class="test_zhao">
+</div>
+<div id="header">
+    <div id="logo">
+        <img src="../img/logo.png" width="100px">
+    </div>
+    <div class="name" id="title_name">校园易平台</div>
+    <div id="min_title">——让生活变得更美好</div>
+    <div id="hearder_right">
+        <div id="zhuce">注册</div>
+        <div id="denglu">登录</div>
+        <div id="user"><a href="../src/private_infomation.html">我的</a></div>
+    </div>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="icon_search"></i></div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键字"
+                       required="required">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger">确 定</button>
+    </form>
+</div>
+
+ 
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>
+</div>
+
+<style>
+    .tip_div{
+       width:200px;
+       height: auto;
+       border-radius: 4px;
+       box-shadow: 1px 1px 2px;
+       position: absolute;
+       left: 69px;  
+       background: #fff;
+       z-index: 1;
+       display: none;
+    }
+    .tip_div_ul li{
+        width: 200px;
+        height: 34px;
+        line-height: 34px;
+        padding-left: 10px;
+    }
+     .tip_div_ul li:hover{
+       background: rgba(0,0,0,0.05);
+    }
+    .form-inline{
+    top: 229px;
+    margin-top: 0px;
+    position: absolute;
+    right: -26px;
+    }
+</style>
+
+	<div class="container">
+		<div class="row">
+			 
+			<div class="col-md-6 col-md-offset-9" style="clear: both; right: 75px;">
+				<form class="form-inline" style="margin-top: 0px;top: 229px;margin-top: 0px; position: absolute;right:-26px;">
+					<div class="form-group">
+						<label class="sr-only" for="exampleInputAmount">搜索你想要的宝贝</label>
+						<div class="input-group">
+							<div class="input-group-addon">宝贝</div>
+							<input type="text" class="form-control" 
+                            id="demaxiya"
+								placeholder="Amount"  onkeyup="search_fun()">
+						</div>
+					</div><a id="shop_search_btn" class="btn btn-success">Search</a>
+                    <div class="tip_div">
+                        <ul class="tip_div_ul">
+                           
+                        </ul>
+                    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-md-offset-0">
+				<table class="table">
+					<thead>
+						<th>选择</th>
+						<th>商品信息</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>金额</th>
+						<th>操作</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="" value=""><br>
+							</td>
+							<td>
+								<div class="row">
+									<div class="col-md-2">
+										<img alt="tu" src="../img/clothes.jpg">
+									</div>
+									<div class="col-md-3">陆小团团 2018韩国冬季基础百搭厚实保暖面包棉服短款棉衣外套女</div>
+									<div class="col-md-3">颜色分类：浅粉尺码：L</div>
+								</div>
+							</td>
+
+							<td>￥366.9</td>
+
+							<td><input id="min" name="" type="button" value=" - " /> <input
+								id="text_box" name="" type="text" value="1"
+								style="width:30px;text-align: center" /> <input id="add"
+								name="" type="button" value=" + " /></td>
+
+							<td style="color:red">￥1000</td>
+							<td>
+								<button type="button" class="btn btn-danger">删除</button>
+								<button type="button" class="btn btn-warning">移到收藏夹</button></td>
+						</tr>	
+						<tr>
+							<td><input type="checkbox" name="" value=""><br>
+							</td>
+							<td>
+								<div class="row">
+									<div class="col-md-2">
+										<img alt="tu" src="../img/clothes.jpg">
+									</div>
+									<div class="col-md-3">陆小团团 2018韩国冬季基础百搭厚实保暖面包棉服短款棉衣外套女</div>
+									<div class="col-md-3">颜色分类：浅粉尺码：L</div>
+								</div>
+							</td>
+
+							<td>￥366.9</td>
+
+							<td><input id="min" name="" type="button" value=" - " /> <input
+								id="text_box" name="" type="text" value="1"
+								style="width:30px;text-align: center" /> <input id="add"
+								name="" type="button" value=" + " /></td>
+
+							<td style="color:red">￥1000</td>
+							<td>
+								<button type="button" class="btn btn-danger">删除</button>
+								<button type="button" class="btn btn-warning">移到收藏夹</button></td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<div class="row">
+							<div class="col-xs-6 col-md-4">已选商品 0 件</div>
+							<div class="col-xs-6 col-md-4">合计：</div>
+							<div class="col-xs-6 col-md-4">
+								<button type="button" class="btn btn-success">确认订单</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+
+<div class="design">
+    <img src="../img/bg3.jpg" alt="">
+</div>
+<div ng-include="'/footer_baozhang.html'" class="ng-scope">
+    <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
+        <div class="baozhang_content auto">
+            <div class="baozhang_div">
+                <img src="../img/支付.png">
+                <h2>安全支付</h2>
+                <p>支持支付宝微信网银支付</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/精品.png">
+                <h2>至臻精品</h2>
+                <p>顶级设计师创作至臻精品</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/客服.png">
+                <h2>客服支持</h2>
+                <p>强大的客服团队为您服务</p>
+            </div>
+            <div class="baozhang_div baozhang_lastdiv">
+                <img src="../img/服务.png">
+                <h2>服务至上</h2>
+                <p>真诚、诚信、用心服务</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footing">
+    <div class="f1">
+                <span class="footin">
+                    <a href="#">平台简介&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">问题反馈&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">联系我们&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">我要开店&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">加入我们 </a>
+                </span>
+        <div class="p">校园易平台 @ 信息学院软一般网页爱好者</div>
+    </div>
+</div>
+
+
+<div id="top_fixed" class="scroll_wrap">
+    <div class="scroll_content auto">
+        <div class="scroll_logo"><a class="totop" href="/"><img src="../img/logo.png"></a>
+            <span>校园分享平台</span></div>
+        <form class="form-inline scroll_wrap_group">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="icon_search"></i></div>
+                    <input type="text" class="scroll_wrap_group_input" class="form-control" placeholder="请输入关键字"
+                           required="required">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger scroll_wrap_group_button">确 定</button>
+        </form>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<div class="bz_xiala" id="bz_xiala">
+    <div><a id="a_person" href="person.html"><span class="login_after_icon1">用户中心</span></a></div>
+    <div><a href="/member/upload"><span class="bz_xialaz_icon2 login_after_icon2">发布资源</span></a></div>
+    <div><a href="/member/buylog"><span class="bz_xialaz_icon3 login_after_icon3">我的记录</span></a></div>
+    <div><a href="/designer/join"><span class="bz_xialaz_icon4 login_after_icon4">申请加入</span></a></div>
+    <div><a href="/member/msg"><span class="bz_xialaz_icon6 login_after_icon6">消息中心</span></a></div>
+    <div><a ng-click="loginout()"><span class="bz_xialaz_icon5 login_after_icon5">退出登录</span></a></div>
+</div>
+
+<div class="register fadeIn" id="register">
+    <div class="register_content">
+        <div><img class="register_logo" src="../img/logo.png" alt="校园yi平台"></div>
+        <div>
+
+
+            <img class="icon_close" id="icon_close" src="../img/close.png" alt="">
+            <p class="register_title">账号登录</p>
+        </div>
+        <form class="register_form">
+            <div class="user_div">登录账号：<input type="text" id='user_name' placeholder="请输入用户名 或 邮箱" required="required">
+            </div>
+            <div class="user_div">登录密码：<input type="password" id='user_pwd' placeholder="请输入密码" required="required">
+            </div>
+            <div class="login_phone clearfix"><span></span><a href="#" style="float: right;">使用手机验证码登录</a></div>
+            <div class="login_btn" id="ajax_button">
+                <button type="button" class="btn btn-danger btn-lg">立即登录</button>
+            </div>
+            <div class="login_reg">
+                <a href="register.html">注册校园易账号</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+     $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                 
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+    function register_suc(data) {
+        $('#register').css('display', 'none');
+        $('#denglu').text(data.result.userId);
+
+        //  传递参数给另外一个网页
+        var u = "person.html?userId=" + data.result.userId;
+        $('#a_person').attr("href", u);
+    }
+
+
+    $('#denglu').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    });
+
+
+    $('#bz_xiala').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    }, function () {
+        $('#bz_xiala').css('display', 'none');
+    });
+
+    $('#denglu').click(function () {
+        $('#register').css('visibility', 'visible');
+        $('#register').css('display', 'flex');
+        $('#register').css('z-index', '11');
+        $('.test_zhao').fadeIn();
+    })
+    $('#zhuce').click(function () {
+            window.location.href = "register.html";
+        });
+
+        $('#icon_close').click(hidden_zhao);
+
+         function register_in() {
+            console.log(231231);
+        var user_name = document.getElementById('user_name').value;
+        var user_pwd = document.getElementById('user_pwd').value;
+
+        var json_data = {
+            userId: user_name,
+            userPwd: user_pwd
+        }
+        $.ajax({
+            url: "http://binguo.online/users",
+            type: 'POST',
+            dataType: "json",
+            data: json_data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+
+                if (data.status == 0) {
+                    status = 0;
+                    console.log("登录成功");
+                    console.log(data);
+                    hidden_zhao();
+                    register_suc(data);
+                    setCookie("userId", data.result.userId, 6);
+                }
+                else if (data.status == 103) {
+                    $('.login_phone span').text("用户名不存在").css("color", "red");
+                    status = 103;
+                    console.log(data);
+                } else if (data.status == 102) {
+                    console.log("用户名或密码错误");
+                    status = 102;
+                    $('.login_phone span').text("用户名或密码错误");
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+
+    register_in();
+    var ajax_button = document.getElementById('ajax_button');
+    ajax_button.addEventListener('click', register_in);
+function hidden_zhao() {
+        $('#register').css('visibility', 'hidden');
+        $('.test_zhao').css('display', 'none');
+    }
+    
+</script>
+<script>
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                console.log(111);
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+
+    $(document).ready(function() {
+		 
+		var t = $("#text_box");
+		 
+		$('#min').attr('disabled', true);
+	 
+		$("#add").click(function() {
+			 
+			t.val(Math.abs(parseInt(t.val())) + 1);
+			if (parseInt(t.val()) != 1) {
+				$('#min').attr('disabled', false);
+			}
+			;
+		})
+	 
+		$("#min").click(function() {
+			t.val(Math.abs(parseInt(t.val())) - 1);
+			if (parseInt(t.val()) == 1) {
+				$('#min').attr('disabled', true);
+			}
+			;
+		})
+	});
+
+        
+    function search_fun(){
+         var search_value = document.getElementById('demaxiya').value;
+         if(search_value == ""){
+            $(".tip_div").css("display","none");
+         }else{
+             $(".tip_div").css("display","block");
+         }
+         var data_json = {
+            goodsKey:search_value
+            }; 
+        $.ajax({
+            url:'http://binguo.online/goods/search',
+            type:'GET',
+            dataType:'json',
+            data:data_json,
+            success:function(data){
+                console.log(data);
+                var goods_name_list = data.result;
+                console.log(goods_name_list);
+                $('.tip_div_ul').empty();
+                if(goods_name_list.length >5){
+                    for(let i=0; i<5; i++){
+                        var tip_node = document.createElement('li');
+                         tip_node.innerHTML = goods_name_list[i].goodsName;
+                        $('.tip_div_ul').append(tip_node);
+                    }
+
+                }else{
+                    for(let i=0; i<goods_name_list.length; i++){
+                         var tip_node = document.createElement('li');
+                         tip_node.innerHTML = goods_name_list[i].goodsName;
+                        $('.tip_div_ul').append(tip_node);
+                    }
+                }
+                
+                // for(let i=0; i<)
+            },
+            error:function(err){
+                console.log(err);
+            }
+
+        })
+       
+    }
+ 
+</script>
+</body>
+</html>

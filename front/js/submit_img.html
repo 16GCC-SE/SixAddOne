@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+<style>
+  #preview{
+    width:100px;
+    height:100px;
+    border:1px solid #ccc;
+  }
+  .imagewrap img{
+ width:100px;
+    height:100px;
+    border:1px solid #ccc;
+  }
+</style>
+ </head>
+ <body>
+
+    <input id="uploadImageBtn" name="imageList" type="file" onchange="showImage(this)" style="display: none">
+    <div id="imagewrap" class="imagewrap">
+      <img src="">
+    </div>
+    <input class="modify" type="button" value="上传图片" onclick="popSelectImageBox()">
+    <input type="button" id="tijiao" value="提交图片">            
+<!-- <input type="file" id="sdk">
+<input type="button" id="btn" value="提交">
+<input type="button" id="change" value="保存"> -->
+<script>
+/**
+ * 弹出图像选择框
+ */
+function popSelectImageBox(){
+    $("#uploadImageBtn").trigger("click");
+}
+/**
+ * 显示图片预览
+ * 上传按钮
+ */
+function showImage(that){
+  var objUrl = getObjectURL(that.files[0]) ;
+  if (objUrl) {
+     $("#imagewrap>img").attr("src", objUrl);
+  }
+}
+/**
+ * 获取上传图片的url
+ *file 上传的文件对象
+ */
+function getObjectURL(file) {
+    var url = null;
+    if (window.createObjectURL != undefined) { // basic
+        url = window.createObjectURL(file);
+    } else if (window.URL != undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file);
+    } else if (window.webkitURL != undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file);
+    }
+       return url;
+}
+/**
+*上传图片到后端
+*/
+$("#tijiao").on("click",function(){
+  var uploadImageBtn=document.getElementById("uploadImageBtn");
+  var formdata=new FormData();
+  formdata.append("newflies",uploadImageBtn.files[0]);
+    $.ajax({
+                url:'http://binguo.online/goods/addgoodsimg',
+                type:'POST',
+                data:formdata,
+                contentType: false,
+                processData: false,
+                success:function (datas) {
+                    console.log(datas.responseText);
+                    srcs = datas;
+                    alert(srcs);
+                     
+                },
+                error:function (err) {
+                    console.log(err.responseText);
+                    srcs = err.responseText;
+                    console.log(srcs);
+                     
+                }
+
+            })
+})
+
+ 
+  </script>
+ </body>
+</html>

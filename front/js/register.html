@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <img src="../img/logo.png" width="100px">
+    </div>
+    <div class="name" id="title_name">校园易平台</div>
+    <div id="min_title">——让生活变得更美好</div>
+
+    <!-- <div class="search">
+        <i></i><input class="search_text form-control" type="text" name="" placeholder="请输入关键字"><button class="btn btn-danger" type="submit">确定</button>
+    </div> -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="icon_search"></i></div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键字"
+                       required="required">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger">确 定</button>
+    </form>
+</div>
+
+
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户注册</h2>
+</div>
+
+<div class="register_content" class="auto">
+
+    <div class="reg_tag">
+        <ul>
+            <li class="li1 cur"><font>1</font><span>填写基本信息</span></li>
+            <li class="li2"><font>2</font><span>信息验证</span></li>
+            <li class="li3"><font>√</font><span>恭喜注册成功</span></li>
+        </ul>
+    </div>
+    <div class="reg_con">
+        <div class="list mima">
+            <span class="regt">帐&nbsp;&nbsp;号：</span>
+            <span class="ts_yes" style="display: none;">√</span>
+            <input id="userId" type="text" name="mima" placeholder="请填写您的ID账号" value="" autocomplete="off">
+
+        </div>
+        <div class="list tel telyanz">
+            <span class="regt">学&nbsp;&nbsp;号：</span>
+
+            <input id="userNumber" type="text" name="tel" placeholder="您的学位号" autocomplete="off">
+
+
+        </div>
+
+        <div class="list mima">
+            <span class="regt">用&nbsp;户&nbsp;名：</span>
+            <span class="ts_yes" style="display: none;">√</span>
+            <input id="userName" type="text" name="mima" placeholder="请填写您的用户名" value="" autocomplete="off">
+
+        </div>
+        <div class="list mima">
+            <span class="regt">设置密码：</span>
+            <span class="ts_yes" style="display: none;">√</span>
+            <input id="userPwd" type="password" name="mima" placeholder="建议使用字母、数字和符号两种以上的组合" value=""
+                   autocomplete="off">
+
+        </div>
+
+        <div class="list mimare">
+            <span class="regt">确认密码：</span>
+            <span class="ts_yes" style="display: none;">√</span>
+            <input id="userPwd02" type="password" placeholder="请再次输入密码" name="mimare" autocomplete="off">
+        </div>
+        <div class="list zhucexieyi">
+            <input type="checkbox" name="zhucexieyi" value="1" autocomplete="off" checked="checked">
+            <span>我已阅读并同意<font> &lt;&lt; 注册协议 &gt;&gt;</font></span>
+        </div>
+        <button id="reg_btn" type="button" class="reg_btn" onclick="instant_register()">立即注册</button>
+    </div>
+
+</div>
+
+
+<br/><br/>
+<div class="design">
+    <img src="../img/bg3.jpg" alt="">
+</div>
+<div ng-include="'/footer_baozhang.html'" class="ng-scope">
+    <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
+        <div class="baozhang_content auto">
+            <div class="baozhang_div">
+                <img src="../img/支付.png">
+                <h2>安全支付</h2>
+                <p>支持支付宝微信网银支付</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/精品.png">
+                <h2>至臻精品</h2>
+                <p>顶级设计师创作至臻精品</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/客服.png">
+                <h2>客服支持</h2>
+                <p>强大的客服团队为您服务</p>
+            </div>
+            <div class="baozhang_div baozhang_lastdiv">
+                <img src="../img/服务.png">
+                <h2>服务至上</h2>
+                <p>真诚、诚信、用心服务</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footing">
+    <div class="f1">
+                <span class="footin">
+                    <a href="#">平台简介&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">问题反馈&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">联系我们&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">我要开店&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">加入我们 </a>
+                </span>
+        <div class="p">校园易平台 @ 信息学院软一般网页爱好者</div>
+    </div>
+</div>
+
+
+<div id="top_fixed" class="scroll_wrap">
+    <div class="scroll_content auto">
+        <div class="scroll_logo"><a class="totop" href="/"><img src="../img/logo.png"></a>
+            <span>校园分享平台</span></div>
+        <form class="form-inline scroll_wrap_group">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="icon_search"></i></div>
+                    <input type="text" class="scroll_wrap_group_input" class="form-control" placeholder="请输入关键字"
+                           required="required">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger scroll_wrap_group_button">确 定</button>
+        </form>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+
+
+    function instant_register() {
+        var userName1 = document.getElementById('userName').value;
+        var userPwd1 = document.getElementById('userPwd').value;
+        var userPwd2 = document.getElementById('userPwd02').value;
+        var userId1 = document.getElementById('userId').value;
+        var userNumber1 = document.getElementById('userNumber').value;
+
+        if (userPwd1 != userPwd2) {
+            alert("2222");
+            return;
+        }
+        console.log(userId1);
+        console.log(userName1);
+        console.log(userNumber1);
+        console.log(userPwd1);
+
+        var data = {
+            userId: userId1,
+            userNumber: userNumber1,
+            userName: userName1,
+            userPwd: userPwd1
+        }
+        var xhrs = new XMLHttpRequest();
+
+        xhrs.open('POST', "http://binguo.online/users/register", true);
+        xhrs.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhrs.send("userId=" + userId1 + "&userNumber=" + userNumber1 + "&userName=" + userName1 + "&userPwd=" + userPwd1);
+
+        xhrs.onreadystatechange = function () {
+            if (xhrs.readyState == '4' && xhrs.status == 200) {
+
+                var response = JSON.parse(xhrs.responseText);
+                if (response.status == 0) {
+                    alert("注册成功！");
+                    window.location.href = "index.html";
+                }
+                if (response.status == 104) {
+                    alert("该ID已被注册");
+                }
+
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
