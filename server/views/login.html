@@ -16,7 +16,7 @@
 
 <div id="add"></div>
 <script>
-    var src;
+    var srcs= "";
     function getCookie(name)
     {
         var bikky = document.cookie;
@@ -42,26 +42,28 @@
 //上传图片
     $('#btn').click(function () {
         var file = document.getElementById('sdk').files[0];
-
         var formdata = new FormData();
         formdata.append("files",file);
         formdata.append("userId",getCookie("userId"));
         if(file.size<2*1024*1024){
             $.ajax({
 
-                url:'http://localhost/bin/ll/users/adduserimg',
+                url:'http://localhost:3000/goods/addgoodsimg',
                 type:'POST',
                 data:formdata,
-//                dataType:"json",
                 contentType: false,
                 processData: false,
-                success:function (data) {
-                    console.log(data);
-                    src = data;
+                success:function (datas) {
+                    console.log(datas.responseText);
+                    srcs = datas;
+                    alert(srcs);
                     s();
                 },
                 error:function (err) {
-                    console.log(err);
+                    console.log(err.responseText);
+                    srcs = err.responseText;
+                    console.log(srcs);
+                    s();
                 }
 
             })
@@ -70,17 +72,17 @@
 //加载图片
     function s() {
         var add =  document.createElement('div');
-        add.innerHTML="<img src="+src+" alt='' >"
+        add.innerHTML="<img src="+srcs+" alt='' >"
         document.getElementById('add').appendChild(add);
     }
 //修改图片
     $('#change').click(function () {
         var ll = {
-            "userImg":src,
-            "userId":getCookie("userId")
+            "goodsImg":srcs,
+            "goodsId":"5bf0dd079673c22070d72387"
         }
         $.ajax({
-            url:'http://localhost/bin/ll/users/changeuserimg',
+            url:'http://localhost:3000/goods/changegoods',
             type:'POST',
             data:ll,
             dataType:"json",
@@ -92,21 +94,14 @@
 //修改信息
     $('#usernew').click(function () {
         var nesws = {
-//            "userId":"12345",
-//            "userName":"12345",
-//            "userPwd":"12345",
-//            "userNumber":"12345",
-//            "userImg":"12345",
-//            "userSex":"12345",
-//            "userAge":"12345",
-//            "userQQ":"12345",
-//            "userPhone":"12345"
-            "goodsType":"食品",
-            "goodsName":"冰可乐",
-            "goodsPrice":"10"
+//            "goodsId":"5bf0dd079673c22070d72387",
+//            "goodsImg":"./ll/sdf.img",
+//            "goodsPrice":"20"
+            "userId":"22",
+            "goodsId":"5bf0dd079673c22070d72387",
         }
         $.ajax({
-            url:'http://localhost/bin/ll/goods/addgoods',
+            url:'http://localhost/users/change',
             type:'POST',
             data:nesws,
             dataType:"json",

@@ -122,7 +122,7 @@
             }
 
 //            xhr.open('get',"http://localhost/bin/ll/users/register?userId="+userId+"&userName="+userName+"&userPwd="+userPwd,true);
-            xhr.open('post',"http://localhost/bin/ll/users/register",true);
+            xhr.open('post',"http://localhost:3000/users/register",true);
             xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
             xhr.send("userId="+userId+"&userName="+userName+"&userPwd="+userPwd);
             xhr.onreadystatechange = function () {

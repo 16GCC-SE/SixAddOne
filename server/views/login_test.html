@@ -104,7 +104,7 @@
                 alert("请输入您的密码");
                 return
             }
-            xhr.open('post',"http://localhost/bin/ll/users",true);
+            xhr.open('post',"http://localhost:3000/users",true);
             xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
             xhr.send("userId="+userId+"&userPwd="+userPwd);
             xhr.onreadystatechange=function () {

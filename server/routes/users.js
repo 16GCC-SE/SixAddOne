@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Lists = require('../models/users');
+let Goods = require('../models/goods')
 let  multiparty = require('multiparty');
 let path = require('path');
 
@@ -124,7 +125,7 @@ router.post('/register',function (req,res,next){
     })
 
 });
-//保存头像图片
+//上传头像图片
 router.post('/adduserimg',function (req,res,next) {
     var form = new multiparty.Form();
     var msg = {status:0,msg:'',result:''};
@@ -145,20 +146,11 @@ router.post('/adduserimg',function (req,res,next) {
         }
         //文件存储路径
         let src = path.join(files.files[0].path);
-        let imgsrc = path.join('../public/images/users/'+src.substr(src.lastIndexOf('\\')+1));
+        let imgsrc = 'http://localhost:3000/images/users/'+src.substr(src.lastIndexOf('users')+6);
+        console.log(src);
+        console.log(src);
         res.send(imgsrc);
         console.log(imgsrc);
-        // Lists.findOne({userId:userId},(err3,doc)=>{
-        //     if(err3){
-        //         msg.status=1;
-        //         res.send(msg)
-        //     }else{
-        //         doc.userImg = imgsrc;
-        //         doc.save(function (err4,doc) {
-        //             res.send(imgsrc);
-        //         })
-        //     }
-        // })
     })
 })
 //修改头像图片接口
@@ -214,14 +206,14 @@ router.post('/change',function (req,res,next) {
                 result:""
             })
         }else{
-            doc.userName = req.body.userName;
-            doc.userNumber = req.body.userNumber;
-            doc.userPwd = req.body.userPwd;
-            doc.userImg = req.body.userImg;
-            doc.userPhone = req.body.userPhone;
-            doc.userSex = req.body.userSex;
-            doc.userAge = req.body.userAge;
-            doc.userQQ = req.body.userQQ;
+            doc.userName = (!req.body.userName)?doc.userName:req.body.userName;
+            doc.userNumber = (!req.body.userNumber)?doc.userNumber:req.body.userNumber;
+            doc.userPwd = (!req.body.userPwd)?doc.userPwd:req.body.userPwd;
+            doc.userImg = (!req.body.userImg)?doc.userImg:req.body.userImg;
+            doc.userPhone = (!req.body.userPhone)?doc.userImg:req.body.userPhone;
+            doc.userSex = (!req.body.userSex)?doc.userSex:req.body.userSex;
+            doc.userAge = (!req.body.userAge)?doc.userAge:req.body.userAge;
+            doc.userQQ = (!req.body.userQQ)?doc.userQQ:req.body.userQQ;
             if(doc=='null'){
                 res.json({
                     status:"102",
@@ -247,5 +239,177 @@ router.post('/change',function (req,res,next) {
             }
         }
     });
+})
+//增加购物车信息
+router.post('/addgoods',function (req,res,next) {
+    let userId = req.body.userId;
+    let goodsId = req.body.goodsId;
+
+    Lists.findOne({userId:userId},(err,userdoc)=>{
+        if(err){
+            res.json({
+                status:"1",
+                msg:err.message,
+                result:"请求出错"
+            })
+        }else{
+            let goodsItem = ""
+            userdoc.userGoods.forEach((item)=>{
+                if(item._id == goodsId){
+                    console.log("该商品存在列表")
+                    goodsItem = item;
+                    item.goodsNum++;
+                    item.goodsStatus++;
+                }
+            });
+            if(goodsItem){
+                userdoc.save((err3,doc2)=>{
+                    if(err3){
+                        res.json({
+                            status:"1",
+                            msg:err3.message,
+                            result:"请求数据出错"
+                        })
+                    }else{
+                        res.json({
+                            status:'0',
+                            msg:'',
+                            result:'添加购物车成功'
+                        })
+                        console.log(doc2)
+                    }
+                })
+            }else{
+            Goods.findOne({_id:goodsId},(err1,goodsdoc)=>{
+                if(err1){
+                    res.json({
+                        status:"1",
+                        msg:err1.message,
+                        result:"请求出错"
+                    })
+                }else{
+                    if(!goodsdoc){
+                        res.json({
+                            status:"102",
+                            msg:"",
+                            result:"该商品不存在"
+                        })
+                        console.log("该商品不存在")
+                    }else{
+                        console.log("该商品存在")
+                        goodsdoc.goodsNum = "1";
+                        goodsdoc.goodsCheck = "1";
+                        userdoc.userGoods.push(goodsdoc);
+                        userdoc.save((err3,doc2)=>{
+                            if(err3){
+                                res.json({
+                                    status:"1",
+                                    msg:err3.message,
+                                    result:"请求数据出错"
+                                })
+                            }else{
+                                res.json({
+                                    status:'0',
+                                    msg:'',
+                                    result:'添加购物车成功'
+                                })
+                                console.log(doc2)
+                            }
+                        })
+
+                    }
+                }
+            })
+
+         }
+        }
+    })
+})
+//查看购物车数据
+router.post("/cartlist",function(req,res,next){
+    let userId = req.body.userId;
+    Lists.findOne({userId:userId},function(err,doc){
+        if(err){
+            res.json({
+                status:"1",
+                msg:err.message,
+                result:"请求出错"
+            })
+        }else{
+            if(doc){
+                res.json({
+                    status:'0',
+                    msg:'',
+                    result:doc.userGoods
+                })
+            }
+        }
+    })
+
+})
+//购物车删除
+router.post("/cartdel",function(req,res,next){
+    let userId = req.body.userId;
+    let goodsId = req.body.goodsId;
+    console.log(`${userId}++++${goodsId}`)
+    Lists.update({userId:userId},{$pull:{'userGoods':{'_id':goodsId}}},function(err,doc){
+        if(err){
+            res.json({
+                status:'1',
+                msg:err.message,
+                result:''
+            })
+        }else{
+            res.json({
+                status:'0',
+                msg:'删除信息成功',
+                result:doc
+            })
+        }
+    })
+})
+//修改购物车商品信息接口
+router.post("/cartchange",function(req,res,next){
+    let userId = req.body.userId;
+    let goodsId = req.body.goodsId;
+    let goodsNum = req.body.goodsNum;
+    let goodsCheck = req.body.goodsCheck;
+    Lists.update({"userId":userId,"userGoods._id":goodsId},{
+        "userGoods.$.goodsNum":goodsNum,
+        "userGoods.$.goodsCheck":goodsCheck
+    },function(err1){
+        if(err1){
+            res.json({
+                status:'1',
+                msg:err1.message,
+                result:''
+            })
+        }else{
+            res.json({
+                status:'0',
+                msg:'操作成功',
+                result:"修改数据成功"
+            })
+        }
+    })
+})
+//查询用户店铺商品
+router.post('/userstore',function(req,res,next){
+    let goodsAuthorId = req.body.userId;
+    Goods.find({goodsAuthorId:goodsAuthorId},(err,doc)=>{
+        if(err){
+            res.json({
+                status:'1',
+                msg:err.message,
+                result:"请求出错"
+            });
+        }else{
+            res.json({
+                status:'0',
+                msg:"获取成功",
+                result:doc
+            })
+        }
+    })
 })
 module.exports = router;
