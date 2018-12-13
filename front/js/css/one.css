@@ -1,0 +1,23 @@
+
+body,html{height:100%;padding:0;margin:0;background-color:#f2f2f2
+}
+body{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column
+}
+*,a,div,img,input,p,span{margin:0;padding:0
+}
+a:hover{text-decoration:none
+}
+.item-list{margin:0 auto;width:1040px;min-height:680px;margin-bottom:20px
+}
+.item-list-wrap{width:1050px;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap
+}
+.item-list-wrap,.pagination{display:-moz-box;display:-ms-flexbox;display:flex
+}
+.pagination{margin:0 auto;width:1040px;margin-bottom:40px;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center
+}
+.el-pagination.is-background .el-pager li{background-color:#fff;margin:0 2px
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{background-color:#ffd84d;color:#fff
+}
+.el-pagination.is-background .el-pager li.el-icon-more{background-color:#f2f2f2
+}

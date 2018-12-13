@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+  <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+
+<input type="file" id="sdk">
+<input type="button" id="btn" value="提交">
+<input type="button" id="change" value="保存">
+<img id="add" src="" alt="">
+
+  <img src="../img/user_name_img.jpg"  width="100" height="100"/>
+ 
+
+<!-- <img src="../img/user_name_img.jpg" alt="" width="100px" height="100px"> -->
+
+
+
+	<script>
+	$('#btn').click(function () {
+        var file = document.getElementById('sdk').files[0];
+        var formdata = new FormData();
+        formdata.append("files",file);
+        if(file.size<2*1024*1024){
+            $.ajax({
+                url:'http://binguo.online/users/adduserimg',
+                type:'POST',
+                data:formdata,
+                contentType: false,
+                processData: false,
+                success:function (datas) {
+                    console.log(datas.responseText);
+                    srcs = datas;
+                    alert(srcs);
+                    s(srcs);
+                },
+                error:function (err) {
+                    console.log(err.responseText);
+                    srcs = err.responseText;
+                    console.log(srcs);
+                    s();
+                }
+
+            })
+        }else if (file.size<2*1024*1024) {
+            alert("上传的图片太大");
+        }
+    })
+//加载图片
+    function s(srcs) {
+        $('#add').attr('src','srcs');
+ 
+    }
+	</script>
+</body>
+</html>

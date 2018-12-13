@@ -1,0 +1,41 @@
+
+.usercard-wrap[data-v-60ebec27]{width:370px;height:225px;position:absolute;right:0;border-radius:4px;background-color:#fff;bottom:-10px
+}
+.logined[data-v-60ebec27],.unlogin[data-v-60ebec27]{-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;display:-moz-box;display:-ms-flexbox;display:flex
+}
+.icon[data-v-60ebec27]{margin:0 auto;margin-top:46px;margin-bottom:18px;height:70px;width:70px
+}
+.btn[data-v-60ebec27]{margin:0 auto;width:130px;height:32px;font-size:14px;font-family:PingFangSC-Regular;line-height:32px;background-color:#ffd84d;margin-bottom:15px;border-radius:3px
+}
+.btn[data-v-60ebec27],.tip[data-v-60ebec27]{color:#222;text-align:center
+}
+.tip[data-v-60ebec27]{font-size:10px
+}
+.user-info[data-v-60ebec27]{margin-top:30px;margin-left:30px;height:60px;display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-moz-box-align:center;-ms-flex-align:center;align-items:center
+}
+.head[data-v-60ebec27]{width:60px;height:60px;background-color:#222;margin-right:10px;border-radius:60px
+}
+.head-img[data-v-60ebec27]{width:56px;height:56px;margin-top:2px;margin-left:2px;border-radius:56px
+}
+.user-des[data-v-60ebec27]{height:44px;width:250px;overflow:hidden
+}
+.user-des .nick[data-v-60ebec27]{font-size:18px;width:250px;height:25px;line-height:25px;font-family:PingFangSC-Semibold;font-weight:700
+}
+.user-des .nick[data-v-60ebec27],.user-des .sum[data-v-60ebec27]{color:#222;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.user-des .sum[data-v-60ebec27]{font-size:12px;height:17px;line-height:17px;margin-top:2px
+}
+.my-list[data-v-60ebec27]{margin-left:10px;margin-top:37px;display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row
+}
+.my-item[data-v-60ebec27]{width:88px;height:83px;cursor:pointer;position:relative
+}
+.item-icon[data-v-60ebec27]{margin:0 auto;width:26px;height:26px;display:block;margin-bottom:10px
+}
+.item-name[data-v-60ebec27]{font-size:12px;height:17px;line-height:17px;margin-bottom:8px
+}
+.item-name[data-v-60ebec27],.item-num[data-v-60ebec27]{color:#222;width:88px;text-align:center
+}
+.item-num[data-v-60ebec27]{font-size:18px;height:25px;line-height:25px;font-family:PingFangSC-Semibold;font-weight:700
+}
+.item-status[data-v-60ebec27]{width:6px;height:6px;position:absolute;background-color:#ff410f;border-radius:6px;right:25px;bottom:17px
+}
