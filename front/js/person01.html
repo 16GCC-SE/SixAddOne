@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="../css/modele.css">
     <link rel="stylesheet" href="../css/person.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
     <script src="../js/vendor/public.js"></script>
-    <!-- <script src="person.js"></script> -->
-
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+    <!-- <script src="modele.js"></script> -->
 </head>
-<body onload="checkCookie()">
+<body onload="checkCookie()" class="clearfix">
+
+<div class="test_zhao">
+</div>
 <div id="header">
     <div id="logo">
         <img src="../img/logo.png" width="100px">
@@ -26,6 +28,7 @@
         <div id="denglu">登录</div>
         <div id="user"><a href="../src/private_infomation.html">我的</a></div>
     </div>
+    
 
     <form class="form-inline">
         <div class="form-group">
@@ -40,10 +43,11 @@
     </form>
 </div>
 
-
+ 
 <div class="pro_wrap user_pro_wrap  auto">
     <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>
 </div>
+
 
 <div class="auto">
 
@@ -55,7 +59,7 @@
             <li><a  ><span class="user_icon01">用户中心</span></a></li>
             <li><a  ><span class="user_icon02">发布</span></a></li>
             <li><a href="#"><span class="user_icon03">我的收藏</span></a></li>
-            <li><a href="gouwuche.html"><span class="user_icon04">我的购物车</span></a></li>
+            <li><a href="#"><span class="user_icon04">我的购物车</span></a></li>
             <li><a href="#"><span class="user_icon05">我的记录</span></a></li>
             <li><a href="#"><span class="user_icon06">我的订单</span></a></li>
             <li><a href="#"><span class="user_icon07">我的钱包</span></a></li>
@@ -483,6 +487,13 @@
 
   
 </div>
+
+
+
+
+
+
+
 <div class="design">
     <img src="../img/bg3.jpg" alt="">
 </div>
@@ -547,6 +558,139 @@
         <div class="clear"></div>
     </div>
 </div>
+
+
+<div class="bz_xiala" id="bz_xiala">
+    <div><a id="a_person" href="person.html"><span class="login_after_icon1">用户中心</span></a></div>
+    <div><a href="/member/upload"><span class="bz_xialaz_icon2 login_after_icon2">发布资源</span></a></div>
+    <div><a href="/member/buylog"><span class="bz_xialaz_icon3 login_after_icon3">我的记录</span></a></div>
+    <div><a href="/designer/join"><span class="bz_xialaz_icon4 login_after_icon4">申请加入</span></a></div>
+    <div><a href="/member/msg"><span class="bz_xialaz_icon6 login_after_icon6">消息中心</span></a></div>
+    <div><a ng-click="loginout()"><span class="bz_xialaz_icon5 login_after_icon5">退出登录</span></a></div>
+</div>
+
+<div class="register fadeIn" id="register">
+    <div class="register_content">
+        <div><img class="register_logo" src="../img/logo.png" alt="校园yi平台"></div>
+        <div>
+
+
+            <img class="icon_close" id="icon_close" src="../img/close.png" alt="">
+            <p class="register_title">账号登录</p>
+        </div>
+        <form class="register_form">
+            <div class="user_div">登录账号：<input type="text" id='user_name' placeholder="请输入用户名 或 邮箱" required="required">
+            </div>
+            <div class="user_div">登录密码：<input type="password" id='user_pwd' placeholder="请输入密码" required="required">
+            </div>
+            <div class="login_phone clearfix"><span></span><a href="#" style="float: right;">使用手机验证码登录</a></div>
+            <div class="login_btn" id="ajax_button">
+                <button type="button" class="btn btn-danger btn-lg">立即登录</button>
+            </div>
+            <div class="login_reg">
+                <a href="register.html">注册校园易账号</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+     $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                 
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+    function register_suc(data) {
+        $('#register').css('display', 'none');
+        $('#denglu').text(data.result.userId);
+
+        //  传递参数给另外一个网页
+        var u = "person.html?userId=" + data.result.userId;
+        $('#a_person').attr("href", u);
+    }
+
+
+    $('#denglu').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    });
+
+
+    $('#bz_xiala').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    }, function () {
+        $('#bz_xiala').css('display', 'none');
+    });
+
+    $('#denglu').click(function () {
+        $('#register').css('visibility', 'visible');
+        $('#register').css('display', 'flex');
+        $('#register').css('z-index', '8888');
+        $('.test_zhao').fadeIn();
+    })
+    $('#zhuce').click(function () {
+            window.location.href = "register.html";
+        });
+
+        $('#icon_close').click(hidden_zhao);
+
+         function register_in() {
+            
+        var user_name = document.getElementById('user_name').value;
+        var user_pwd = document.getElementById('user_pwd').value;
+
+        var json_data = {
+            userId: user_name,
+            userPwd: user_pwd
+        }
+        $.ajax({
+            url: "http://binguo.online/users",
+            type: 'POST',
+            dataType: "json",
+            data: json_data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+
+                if (data.status == 0) {
+                    status = 0;
+                    console.log("登录成功");
+                    console.log(data);
+                    hidden_zhao();
+                    register_suc(data);
+                    setCookie("userId", data.result.userId, 6);
+                }
+                else if (data.status == 103) {
+                    $('.login_phone span').text("用户名不存在").css("color", "red");
+                    status = 103;
+                    console.log(data);
+                } else if (data.status == 102) {
+                    console.log("用户名或密码错误");
+                    status = 102;
+                    $('.login_phone span').text("用户名或密码错误");
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+
+    register_in();
+    var ajax_button = document.getElementById('ajax_button');
+    ajax_button.addEventListener('click', register_in);
+function hidden_zhao() {
+        $('#register').css('visibility', 'hidden');
+        $('.test_zhao').css('display', 'none');
+    }
+    
+</script>
 <script>
     function change_sex_man() {
         $('#sex_man').attr("value", "男");

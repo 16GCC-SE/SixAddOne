@@ -63,6 +63,12 @@
         text-decoration: none;
         color: red;
     }
+    .form-inline{
+             top: 0; 
+     margin-top: none; 
+     position: none;
+     right: 0; 
+    }
 </style>
 </head>
 <body onload="checkCookie()">
@@ -99,40 +105,13 @@
     <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>
 </div>
 
-<style>
-    .tip_div{
-       width:200px;
-       height: auto;
-       border-radius: 4px;
-       box-shadow: 1px 1px 2px;
-       position: absolute;
-       left: 69px;  
-       background: #fff;
-       z-index: 1;
-       display: none;
-    }
-    .tip_div_ul li{
-        width: 200px;
-        height: 34px;
-        line-height: 34px;
-        padding-left: 10px;
-    }
-     .tip_div_ul li:hover{
-       background: rgba(0,0,0,0.05);
-    }
-    .form-inline{
-    top: 229px;
-    margin-top: 0px;
-    position: absolute;
-    right: -26px;
-    }
-</style>
+ 
 
 	<div class="container">
 		<div class="row">
 			 
 			<div class="col-md-6 col-md-offset-9" style="clear: both; right: 75px;">
-				<form class="form-inline" style="margin-top: 0px;top: 229px;margin-top: 0px; position: absolute;right:-26px;">
+				<form class="form-inline" style="margin-top: 0px;">
 					<div class="form-group">
 						<label class="sr-only" for="exampleInputAmount">搜索你想要的宝贝</label>
 						<div class="input-group">
@@ -166,68 +145,18 @@
 						<th>金额</th>
 						<th>操作</th>
 					</thead>
-					<tbody>
-						<tr>
-							<td><input type="checkbox" name="" value=""><br>
-							</td>
-							<td>
-								<div class="row">
-									<div class="col-md-2">
-										<img alt="tu" src="../img/clothes.jpg">
-									</div>
-									<div class="col-md-3">陆小团团 2018韩国冬季基础百搭厚实保暖面包棉服短款棉衣外套女</div>
-									<div class="col-md-3">颜色分类：浅粉尺码：L</div>
-								</div>
-							</td>
-
-							<td>￥366.9</td>
-
-							<td><input id="min" name="" type="button" value=" - " /> <input
-								id="text_box" name="" type="text" value="1"
-								style="width:30px;text-align: center" /> <input id="add"
-								name="" type="button" value=" + " /></td>
-
-							<td style="color:red">￥1000</td>
-							<td>
-								<button type="button" class="btn btn-danger">删除</button>
-								<button type="button" class="btn btn-warning">移到收藏夹</button></td>
-						</tr>	
-						<tr>
-							<td><input type="checkbox" name="" value=""><br>
-							</td>
-							<td>
-								<div class="row">
-									<div class="col-md-2">
-										<img alt="tu" src="../img/clothes.jpg">
-									</div>
-									<div class="col-md-3">陆小团团 2018韩国冬季基础百搭厚实保暖面包棉服短款棉衣外套女</div>
-									<div class="col-md-3">颜色分类：浅粉尺码：L</div>
-								</div>
-							</td>
-
-							<td>￥366.9</td>
-
-							<td><input id="min" name="" type="button" value=" - " /> <input
-								id="text_box" name="" type="text" value="1"
-								style="width:30px;text-align: center" /> <input id="add"
-								name="" type="button" value=" + " /></td>
-
-							<td style="color:red">￥1000</td>
-							<td>
-								<button type="button" class="btn btn-danger">删除</button>
-								<button type="button" class="btn btn-warning">移到收藏夹</button></td>
-						</tr>
-						
+					<tbody class="tbody_add">
+					
 					</tbody>
 				</table>
 				<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<div class="row">
-							<div class="col-xs-6 col-md-4">已选商品 0 件</div>
+							<div class="col-xs-6 col-md-4">已选商品 <span id="all_num">0</span> 件</div>
 							<div class="col-xs-6 col-md-4">合计：</div>
 							<div class="col-xs-6 col-md-4">
-								<button type="button" class="btn btn-success">确认订单</button>
+								<button type="button" class="btn btn-success" id="btn_topay">确认订单</button>
 							</div>
 						</div>
 					</div>
@@ -239,9 +168,6 @@
 
 
 
-<div class="design">
-    <img src="../img/bg3.jpg" alt="">
-</div>
 <div ng-include="'/footer_baozhang.html'" class="ng-scope">
     <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
         <div class="baozhang_content auto">
@@ -352,6 +278,9 @@
             }
         })
     })
+
+
+     //登录成功
     function register_suc(data) {
         $('#register').css('display', 'none');
         $('#denglu').text(data.result.userId);
@@ -376,7 +305,7 @@
     $('#denglu').click(function () {
         $('#register').css('visibility', 'visible');
         $('#register').css('display', 'flex');
-        $('#register').css('z-index', '11');
+        $('#register').css('z-index', '8888');
         $('.test_zhao').fadeIn();
     })
     $('#zhuce').click(function () {
@@ -401,7 +330,7 @@
             data: json_data,
             contentType: "application/x-www-form-urlencoded",
             success: function (data) {
-
+                console.log(1233445);
                 if (data.status == 0) {
                     status = 0;
                     console.log("登录成功");
@@ -409,6 +338,7 @@
                     hidden_zhao();
                     register_suc(data);
                     setCookie("userId", data.result.userId, 6);
+                    user_shop_carlist(data.result.userId);
                 }
                 else if (data.status == 103) {
                     $('.login_phone span').text("用户名不存在").css("color", "red");
@@ -449,76 +379,130 @@ function hidden_zhao() {
         })
     })
 
-    $(document).ready(function() {
-		 
-		var t = $("#text_box");
-		 
-		$('#min').attr('disabled', true);
-	 
-		$("#add").click(function() {
-			 
-			t.val(Math.abs(parseInt(t.val())) + 1);
-			if (parseInt(t.val()) != 1) {
-				$('#min').attr('disabled', false);
-			}
-			;
-		})
-	 
-		$("#min").click(function() {
-			t.val(Math.abs(parseInt(t.val())) - 1);
-			if (parseInt(t.val()) == 1) {
-				$('#min').attr('disabled', true);
-			}
-			;
-		})
-	});
-
         
-    function search_fun(){
-         var search_value = document.getElementById('demaxiya').value;
-         if(search_value == ""){
-            $(".tip_div").css("display","none");
-         }else{
-             $(".tip_div").css("display","block");
-         }
-         var data_json = {
-            goodsKey:search_value
-            }; 
+  
+ 
+</script>
+<script>
+    function user_shop_carlist(user_name_id){
+        var data_json = { userId : user_name_id};
         $.ajax({
-            url:'http://binguo.online/goods/search',
-            type:'GET',
+            url:'http://binguo.online/users/cartlist',
+            type:'POST',
             dataType:'json',
             data:data_json,
             success:function(data){
-                console.log(data);
-                var goods_name_list = data.result;
-                console.log(goods_name_list);
-                $('.tip_div_ul').empty();
-                if(goods_name_list.length >5){
-                    for(let i=0; i<5; i++){
-                        var tip_node = document.createElement('li');
-                         tip_node.innerHTML = goods_name_list[i].goodsName;
-                        $('.tip_div_ul').append(tip_node);
-                    }
+                var data_arr = data.result;
+                var data_arr_len = data_arr.length;
+                console.log(data_arr);
+                for(let i= data_arr_len-1 ; i>=0; i--){
 
-                }else{
-                    for(let i=0; i<goods_name_list.length; i++){
-                         var tip_node = document.createElement('li');
-                         tip_node.innerHTML = goods_name_list[i].goodsName;
-                        $('.tip_div_ul').append(tip_node);
-                    }
+                $('.tbody_add').append(`<tr>
+                            <td><input type="checkbox" name="" checked value=""><br>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img alt="tu" src="${data_arr[i].goodsImg}">
+                                    </div>
+                                    <div class="col-md-3">${data_arr[i].goodsName + data_arr[i].goodsDetail }</div>
+                                    <div class="col-md-3">商品分类：${data_arr[i].goodsType}</div>
+                                </div>
+                            </td>
+
+                            <td>${data_arr[i].goodsPrice}</td>
+
+                            <td><input id="min${i}" name="" type="button" value="  -  " /> <input
+                                id="text_box${i}"  name="" type="text" value="1" onchange="change_num('text_box${i}',${data_arr[i].goodsPrice})"
+                                style="width:30px;text-align: center" /> <input id="add${i}"
+                                name="" type="button" value="  +  " /></td>
+
+                            <td id="text_box${i}_price" style="color:red">${data_arr[i].goodsPrice}</td>
+                            <td>
+                                <button type="button" id="delete_shop${i}" class="btn btn-danger">删除</button>
+                                <button type="button" class="btn btn-warning">移到收藏夹</button></td>
+                        </tr>`); 
+                var delete_shop = "#delete_shop" + i ;
+
+
+
+                function shop_remove(){
+                     var data_json_delete = {
+                userId : user_name_id,
+                goodsId : data_arr[i]._id
+            }
+            console.log(data_json_delete);
+            $.ajax({
+            url:'http://binguo.online/users/cartdel',
+            type:'POST',
+            dataType:'json',
+            data:data_json_delete,
+            success:function(data){
+                alert(data.msg);
+                location.reload();
+            }
+        })
                 }
-                
-                // for(let i=0; i<)
-            },
-            error:function(err){
-                console.log(err);
+        $(delete_shop).click(function(){
+        if(confirm("确定移出购物车吗？")){
+
+           shop_remove();
+        }
+         })
+        var min = "#min" + i;
+        var add = "#add"  + i;
+        var text_box = "#text_box" + i;
+        var t = $(text_box);
+        $(min).attr('disabled', true);
+     
+        $(add).click(function() {
+            t.val(Math.abs(parseInt(t.val())) + 1);
+            t.attr('value',t.val());
+            if (parseInt(t.val()) != 1) {
+                $(min).attr('disabled', false);
             }
 
+             var text = "#text_box" + i + "_price";
+              
+            $(text).text(data_arr[i].goodsPrice * t.val());
         })
-       
+     
+
+        $(min).click(function() {
+            t.val(Math.abs(parseInt(t.val())) - 1);
+            if (parseInt(t.val()) == 1) {
+                $(min).attr('disabled', true);
+            }
+            var text = "#text_box" + i + "_price";
+            $(text).text(data_arr[i].goodsPrice * t.val());   
+        })
+                }
+                  
+            }
+        })
     }
- 
+
+
+    
+     var user_name_id = getCookie("userId");
+     user_shop_carlist(user_name_id);
+     // document.getElementById('add').click(function(){})
+     function change_num(data,price){
+        console.log(data);
+        console.log(price);
+        var data_value = document.getElementById(data).value;
+
+        var data_price = data + "_price"
+        document.getElementById(data_price).innerHTML = data_value*price;
+     }
+     $('#btn_topay').click(function(){
+        if(confirm("确定支付？")){
+
+            confirm("支付成功！，  演示结束，谢谢大家~");
+        }
+        
+     })
 </script>
+ 
 </body>
 </html>

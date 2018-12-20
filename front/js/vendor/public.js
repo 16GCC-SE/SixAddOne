@@ -19,7 +19,31 @@ function checkCookie(){
     var user=getCookie("userId");
     if (user!=""){
         $('#denglu').text(user); 
+         $.ajax({
+            url: "http://binguo.online/users/check",
+            type: 'GET',
+            dataType: "json",
+            data: {userId:user},
+
+            success: function (data) {
+
+                $(".nick").text(data.result.userName);
+                 $(".head-img").attr("src", data.result.userImg);
+               
+                 $('.item-numing').text(data.result.userGoods.length);
+                }
+            });
+        
+
+
         var u = "person.html?userId=" + user;
         $('#a_person').attr("href",u);
+
+       
     }  
 }
+ function getQueryByName(url, name) {
+        var reg = new RegExp('[?&]' + name + '=([^&#]+)');
+        var query = url.match(reg);
+        return query ? query[1] : null;
+    }

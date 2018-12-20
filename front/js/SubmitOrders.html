@@ -45,9 +45,47 @@
 
  
 <div class="pro_wrap user_pro_wrap  auto">
-    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 商品详情</h2>
 </div>
 
+
+
+<style>
+ #J_UlThumb li a img{
+ width: 60px;
+ height: 60px;   
+}   
+</style>
+
+
+<script>
+    function load_goods_suc(data){
+        $('#J_ImgBooth').attr('src',data.goodsImg);
+        $('#J_UlThumb li a img').attr('src',data.goodsImg);
+        $('.tm-price').text(data.goodsPrice);
+        $('.goods_detail').text(data.goodsDetail);
+        $('.goods_name').text(data.goodsName);
+        $("#J_SpanStock").text(data.goodsNum);
+    }
+    var goods_id = location.search.substring(1);
+    
+    var data_json = {
+        goodsId:goods_id
+    }
+    $.ajax({
+        url:'http://binguo.online/goods/checkall',
+        type:'GET',
+        dataType:'json',
+        data:data_json,
+        success:function(data){
+            console.log(data);
+            load_goods_suc(data.result);
+        }
+    })
+
+
+</script>
+  
 <div id="content" data-cat="J_Cat" data-type="normal">
     <div id="detail">
         <div id="J_DetailMeta" class="tm-detail-meta tm-clear">
@@ -55,11 +93,11 @@
                 <div class="tb-property">
                     <div class="tb-wrap">
                         <div class="tb-detail-hd">
-                            <h1 data-spm="1000983">
+                            <h1 data-spm="1000983" class="goods_detail">
                                 A21秋冬新款男装纯棉休闲裤男纯色 直筒卡其色男裤子青年时尚百搭
                             </h1>
 
-                            <p>
+                            <p class="goods_name">
                                 休闲百搭 插袋撞色小织唛装饰 加固字母纽扣
                             </p>
                         </div>
@@ -130,137 +168,9 @@
                                 <div class="tb-sku">
 
 
-                                    <dl class="tb-prop tm-sale-prop tm-clear ">
-                                        <dt class="tb-metatit">尺码</dt>
-                                        <dd>
-                                            <ul data-property="尺码" class="tm-clear J_TSaleProp     ">
+                                 
 
-                                                <li data-value="20518:662626358">
-                                                    <a href="#">
-                                                        <span>27</span>
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="20518:662626359">
-                                                    <a href="#">
-                                                        <span>28</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:662626360">
-                                                    <a href="#">
-                                                        <span>29</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:444706729">
-                                                    <a href="#">
-                                                        <span>30</span>
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="20518:662626362">
-                                                    <a href="#">
-                                                        <span>31</span>
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="20518:73406764">
-                                                    <a href="#">
-                                                        <span>32</span>
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="20518:662626364">
-                                                    <a href="#">
-                                                        <span>33</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:147478970">
-                                                    <a href="#">
-                                                        <span>34</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:296172561">
-                                                    <a href="#">
-                                                        <span>35</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:59280855">
-                                                    <a href="#">
-                                                        <span>36</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:72380707">
-                                                    <a href="#">
-                                                        <span>37</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:103189693">
-                                                    <a href="#">
-                                                        <span>38</span>
-                                                    </a>
-                                                </li>
-
-                                                <li data-value="20518:672">
-                                                    <a href="#">
-                                                        <span>39</span>
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="20518:229418985">
-                                                    <a href="#">
-                                                        <span>40</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </dd>
-                                    </dl>
-
-                                    <dl class="tb-prop tm-sale-prop tm-clear tm-img-prop ">
-                                        <dt class="tb-metatit">颜色</dt>
-                                        <dd>
-                                            <ul data-property="颜色" class="tm-clear J_TSaleProp tb-img     ">
-
-                                                <li data-value="1627207:28341" title="黑色">
-                                                    <a href="#">
-                                                        <img src="../img/image/heise.jpg" width="40px">
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="1627207:3626821" title="军绿">
-                                                    <a href="#">
-                                                        <img src="../img/image/junlv.jpg" width="40px">
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="1627207:4086389" title="中灰">
-                                                    <a href="#">
-                                                        <img src="../img/image/zhonghui.jpg" width="40px">
-                                                    </a>
-                                                </li>
-
-
-                                                <li data-value="1627207:3883690" title="卡其">
-                                                    <a href="#">
-                                                        <img src="../img/image/kaqi.jpg" width="40px">
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </dd>
-                                    </dl>
+                                  
                                     <dl class="tb-amount tm-clear">
                                         <dt class="tb-metatit">数量</dt>
                                         <dd id="J_Amount">
@@ -293,13 +203,13 @@
                                                title="点击此按钮，到下一步确认购买信息。">立即购买</a>
                                         </div>
                                         <div class="tb-btn-basket tb-btn-sku ">
-                                            <a href="#" rel="nofollow" id="J_LinkBasket">加入购物车</a>
+                                            <a  rel="nofollow" id="J_LinkBasket">加入购物车</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+ 
                         <div class="tm-ser tm-clear">
                             <dl class="tm-clear">
                                 <dt class="tb-metatit">服务承诺</dt>
@@ -327,12 +237,17 @@
 
                     </div>
                 </div>
+
+
                 <div data-spm="1997427645" class="tb-gallery">
 
                     <div class="tb-booth">
                         <a href="#">
-                            <img id="J_ImgBooth" alt="A21秋冬新款男装纯棉休闲裤男纯色 直筒卡其色男裤子青年时尚百搭"
-                                 src="../img/image/kuzi.jpg"
+                            <img id="J_ImgBooth" style="
+    width: 420px;
+    height: 420px;
+"
+                                 src=""
                                  data-hasZoom="700"/>
                         </a>
                     </div>
@@ -375,9 +290,7 @@
     </div>
 </div>
 <br/> 
-<div class="design">
-    <img src="../img/bg3.jpg" alt="">
-</div>
+
 <div ng-include="'/footer_baozhang.html'" class="ng-scope">
     <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
         <div class="baozhang_content auto">
@@ -476,7 +389,12 @@
 </div>
 
 
+
 <script>
+
+
+
+
      $(document).ready(function () {
         $(document).scroll(function () {
             if ($(document).scrollTop() > 200) {
@@ -512,7 +430,7 @@
     $('#denglu').click(function () {
         $('#register').css('visibility', 'visible');
         $('#register').css('display', 'flex');
-        $('#register').css('z-index', '11');
+        $('#register').css('z-index', '8888');
         $('.test_zhao').fadeIn();
     })
     $('#zhuce').click(function () {
@@ -520,10 +438,10 @@
         });
 
         $('#icon_close').click(hidden_zhao);
-
+        var user_name = "";
          function register_in() {
-            console.log(231231);
-        var user_name = document.getElementById('user_name').value;
+            
+         user_name = document.getElementById('user_name').value;
         var user_pwd = document.getElementById('user_pwd').value;
 
         var json_data = {
@@ -571,9 +489,31 @@ function hidden_zhao() {
         $('.test_zhao').css('display', 'none');
     }
     
+
+     $("#J_LinkBasket").click(function(){
+        if(confirm("确定加入购物车？")){
+            console.log(goods_id);
+        var data_json = {
+             goodsId:goods_id,
+             userId:getCookie("userId")
+        }
+     $.ajax({
+        url:'http://binguo.online/users/addgoods',
+        type:'POST',
+        dataType:'json',
+        data: data_json,
+        success:function(data){
+            console.log(data);  
+            window.location.href = "gouwuche.html";     
+        }
+    })
+           
+        }
+
+
+    })
 </script>
-
-
+ 
 
 </body>
 </html>

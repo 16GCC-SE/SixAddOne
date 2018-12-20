@@ -445,6 +445,26 @@ body{
         height: 1800px;
         background: rgba(0,0,0,.45);
         display: none;
-        z-index: 10;
+        z-index: 7777;
     }
-    f1
+    
+     .tip_div{
+       width:200px;
+       height: auto;
+       border-radius: 4px;
+       box-shadow: 1px 1px 2px;
+       position: absolute;
+       left: 69px;  
+       background: #fff;
+       z-index: 44444;
+       display: none;
+    }
+    .tip_div_ul li{
+        width: 200px;
+        height: 34px;
+        line-height: 34px;
+        padding-left: 10px;
+    }
+     .tip_div_ul li:hover{
+       background: rgba(0,0,0,0.05);
+    }
