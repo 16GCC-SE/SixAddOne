@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/person.css">
+    <script src="../js/vendor/public.js"></script>
+    <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body onload="checkCookie()">
+
+<div class="test_zhao">
+</div>
+<div id="header">
+    <div id="logo">
+        <img src="../img/logo.png" width="100px">
+    </div>
+    <div class="name" id="title_name">校园易平台</div>
+    <div id="min_title">——让生活变得更美好</div>
+    <div id="hearder_right">
+        <div id="zhuce">注册</div>
+        <div id="denglu">登录</div>
+        <div id="user"><a href="../src/private_infomation.html">我的</a></div>
+    </div>
+    <!-- <div class="search">
+        <i></i><input class="search_text form-control" type="text" name="" placeholder="请输入关键字"><button class="btn btn-danger" type="submit">确定</button>
+    </div> -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="icon_search"></i></div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键字"
+                       required="required">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger">确 定</button>
+    </form>
+</div>
+
+ 
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 个人中心</h2>
+</div>
+
+
+ 
+
+
+
+<div class="auto clearfix">
+
+
+    <aside class="left_aside clearfix">
+
+        <ul class="left_aside_ul">
+
+            <li><a  href="person.html"><span class="user_icon01">用户中心</span></a></li>
+            <li><a  ><span class="user_icon02">发布</span></a></li>
+            <li><a href="#"><span class="user_icon03">我的收藏</span></a></li>
+            <li><a href="gouwuche.html"><span class="user_icon04">我的购物车</span></a></li>
+            <style>
+                .user_icon05{
+                     color: #fff ;
+                }
+            </style>
+            <li style="background-color: #e83a17;"><a href="#"><span class="user_icon05">我的店铺</span></a></li>
+            <li><a href="#"><span class="user_icon06">我的订单</span></a></li>
+            <li><a href="#"><span class="user_icon07">我的钱包</span></a></li>
+            <li><a href="#"><span class="user_icon08">消息中心</span></a></li>
+            <li><a ><span class="user_icon09">个人设置</span></a></li>
+        </ul>
+    </aside>
+
+	<div style="height: 621px;background: #f9f0f0;display: flex;">
+             <div class="goods_info" id="goods_info">
+                        <div class="goods_title">
+                            <p class="">已上传商品的信息</p>
+                        </div>
+                        <table class="goods_table" style="border: 1px solid #222">
+                            <tbody>
+                            <tr>
+                                <td>上传的图片：</td>
+                                <td style="width: 80px;
+    height: 80px;
+    display: block;
+    margin-left: 20px;"><img style="width:80px;height: 80px;"   id="goods_Img" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>名字：</td>
+                                <td><input id="goods_name" class="form-control" type="text" name="" value=""
+                                           placeholder="添加商品名字"></td>
+                            </tr>
+                            <tr>
+                                <td>描述：</td>
+                                <td><textarea id="goods_detail" class="form-control" placeholder="商品描述"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>宝贝类型：</td>
+                                <td><select class="form-control" id="goods_type">
+                                    <option>食物</option>
+                                    <option>衣物</option>
+                                    <option>数码</option>
+                                    <option>其他</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>宝贝数量：</td>
+                                <td><input type="text" id="goods_num" class="form-control" name="" placeholder="商品数量">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>价格：</td>
+                                <td><input type="text" id="goods_price" class="form-control" name="" value=""
+                                           placeholder="添加商品价格"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="button" class="btn btn-lg goods_submit" value="修改商品属性"
+                                           onclick="submit_goods_info()" id="submit_goods_info"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+        </div>
+	</div>
+   
+ <script>
+
+    function success_store(data){ 
+            console.log("22222")
+                   console.log(data); 
+            
+             $('#goods_price').val(data[1].goodsPrice);
+             $('#goods_detail').val(data[1].goodsDetail);
+             $('#goods_num').val(data[1].goodsNum);
+             $('#goods_type').val(data[1].goodsType);
+             $('#goods_name').val(data[1].goodsName);
+
+             $('#goods_Img').attr("src", data[1].goodsImg);
+              
+
+
+
+        }
+
+    var user_cookie = getCookie('userId');
+      var json_data = {
+            userId: user_cookie
+        }
+        $.ajax({
+            url: "http://binguo.online/users/userstore",
+            type: 'POST',
+            dataType: "json",
+            data: json_data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+                 console.log("------" );
+                console.log(data);
+                 console.log("------");
+                if (data.status == 0) {
+
+                    success_store(data.result);
+                }
+                
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+
+        //获取个人商店的时候，载入店铺的信息
+
+ </script>
+
+    <style>
+        .goods_info {
+            float: left;
+            width: 540px;
+            height: 600px;
+            background: rgba(255, 119, 22, 0.19);
+            margin: 10px;
+        }
+
+        input {
+            width: 284px !important;
+        }
+    </style>
+     
+
+
+
+    <style>
+        .dndArea-left_img{
+    position: absolute;
+    width: 300px;
+    height: 290px;
+    display: block;
+    top: 0;
+    border:1px solid #ddd;
+        }
+    </style>
+ 
+     
+</div>
+
+
+
+
+
+
+
+ 
+  
+ 
+ <div class="design">
+    <img src="../img/bg3.jpg" alt="">
+</div>
+ 
+<div ng-include="'/footer_baozhang.html'" class="ng-scope">
+    <div class="baozhang_wrap baozhang_wrap_fbfbfb ng-scope">
+        <div class="baozhang_content auto">
+            <div class="baozhang_div">
+                <img src="../img/支付.png">
+                <h2>安全支付</h2>
+                <p>支持支付宝微信网银支付</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/精品.png">
+                <h2>至臻精品</h2>
+                <p>顶级设计师创作至臻精品</p>
+            </div>
+            <div class="baozhang_div">
+                <img src="../img/客服.png">
+                <h2>客服支持</h2>
+                <p>强大的客服团队为您服务</p>
+            </div>
+            <div class="baozhang_div baozhang_lastdiv">
+                <img src="../img/服务.png">
+                <h2>服务至上</h2>
+                <p>真诚、诚信、用心服务</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footing">
+    <div class="f1">
+                <span class="footin">
+                    <a href="#">平台简介&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">问题反馈&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">联系我们&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">我要开店&nbsp &nbsp&nbsp &nbsp</a>
+                    <a href="#">加入我们 </a>
+                </span>
+        <div class="p">校园易平台 @ 信息学院软一般网页爱好者</div>
+    </div>
+</div>
+
+
+<div id="top_fixed" class="scroll_wrap">
+    <div class="scroll_content auto">
+        <div class="scroll_logo"><a class="totop" href="/"><img src="../img/logo.png"></a>
+            <span>校园分享平台</span></div>
+        <form class="form-inline scroll_wrap_group">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="icon_search"></i></div>
+                    <input type="text" class="scroll_wrap_group_input" class="form-control" placeholder="请输入关键字"
+                           required="required">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger scroll_wrap_group_button">确 定</button>
+        </form>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<div class="bz_xiala" id="bz_xiala">
+    <div><a id="a_person" href="person.html"><span class="login_after_icon1">用户中心</span></a></div>
+    <div><a href="/member/upload"><span class="bz_xialaz_icon2 login_after_icon2">发布资源</span></a></div>
+    <div><a href="/member/buylog"><span class="bz_xialaz_icon3 login_after_icon3">我的记录</span></a></div>
+    <div><a href="/designer/join"><span class="bz_xialaz_icon4 login_after_icon4">申请加入</span></a></div>
+    <div><a href="/member/msg"><span class="bz_xialaz_icon6 login_after_icon6">消息中心</span></a></div>
+    <div><a ng-click="loginout()"><span class="bz_xialaz_icon5 login_after_icon5">退出登录</span></a></div>
+</div>
+
+<div class="register fadeIn" id="register">
+    <div class="register_content">
+        <div><img class="register_logo" src="../img/logo.png" alt="校园yi平台"></div>
+        <div>
+
+
+            <img class="icon_close" id="icon_close" src="../img/close.png" alt="">
+            <p class="register_title">账号登录</p>
+        </div>
+        <form class="register_form">
+            <div class="user_div">登录账号：<input type="text" id='user_name' style=" width: auto !important;" placeholder="请输入用户名 或 邮箱" required="required">
+            </div>
+            <div class="user_div">登录密码：<input type="password" id='user_pwd' style=" width: auto !important;"  placeholder="请输入密码" required="required">
+            </div>
+            <div class="login_phone clearfix"><span></span><a href="#" style="float: right;">使用手机验证码登录</a></div>
+            <div class="login_btn" id="ajax_button">
+                <button type="button" class="btn btn-danger btn-lg">立即登录</button>
+            </div>
+            <div class="login_reg">
+                <a href="register.html">注册校园易账号</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+
+     $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+                 
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+    })
+    function register_suc(data) {
+        $('#register').css('display', 'none');
+        $('#denglu').text(data.result.userId);
+
+        //  传递参数给另外一个网页
+        var u = "person.html?userId=" + data.result.userId;
+        $('#a_person').attr("href", u);
+    }
+
+
+    $('#denglu').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    });
+
+
+    $('#bz_xiala').hover(function () {
+        $('#bz_xiala').css('display', 'block');
+    }, function () {
+        $('#bz_xiala').css('display', 'none');
+    });
+
+    $('#denglu').click(function () {
+        $('#register').css('visibility', 'visible');
+        $('#register').css('display', 'flex');
+        $('#register').css('z-index', '8888');
+        $('.test_zhao').fadeIn();
+    })
+    $('#zhuce').click(function () {
+            window.location.href = "register.html";
+        });
+
+        $('#icon_close').click(hidden_zhao);
+        var user_name = "";
+         function register_in() {
+            
+         user_name = document.getElementById('user_name').value;
+        var user_pwd = document.getElementById('user_pwd').value;
+
+        var json_data = {
+            userId: user_name,
+            userPwd: user_pwd
+        }
+        $.ajax({
+            url: "http://binguo.online/users",
+            type: 'POST',
+            dataType: "json",
+            data: json_data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+
+                if (data.status == 0) {
+                    status = 0;
+                    console.log("登录成功");
+                    console.log(data);
+                    hidden_zhao();
+                    register_suc(data);
+                    setCookie("userId", data.result.userId, 6);
+                }
+                else if (data.status == 103) {
+                    $('.login_phone span').text("用户名不存在").css("color", "red");
+                    status = 103;
+                    console.log(data);
+                } else if (data.status == 102) {
+                    console.log("用户名或密码错误");
+                    status = 102;
+                    $('.login_phone span').text("用户名或密码错误");
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        })
+    }
+
+    register_in();
+    var ajax_button = document.getElementById('ajax_button');
+    ajax_button.addEventListener('click', register_in);
+function hidden_zhao() {
+        $('#register').css('visibility', 'hidden');
+        $('.test_zhao').css('display', 'none');
+    }
+    
+
+ 
+</script>
+ <script>
+    function change_sex_man() {
+        $('#sex_man').attr("value", "男");
+        $('#sex_man').css('border', '1.7px #46adfe solid');
+        $('#sex_man').css('color', '#46adfe');
+        $('#sex_woman').css('border', '1px #999999 solid');
+        $('#sex_woman').css('color', '#333');
+        $('#sex_woman').attr("value", "");
+    }
+
+    function change_sex_woman() {
+        $('#sex_man').attr("value", "");
+        $('#sex_woman').attr("value", "女");
+        $('#sex_man').css('border', '1px #999999 solid');
+        $('#sex_man').css('color', '#333');
+        $('#sex_woman').css('border', '1.7px #fd4b72 solid');
+        $('#sex_woman').css('color', '#fd4b72');
+    }
+
+    $('#sex_man').click(change_sex_man);
+    $('#sex_woman').click(change_sex_woman);
+    $('#basic_info').click(function () {
+        $('.security').hide();
+        $('.user_table').show();
+        $('#change_pic').show();
+    });
+    $('#security_set').click(function () {
+        $('.user_table').hide();
+        $('.security').show();
+        $('#change_pic').hide();
+    })
+
+    function getQueryByName(url, name) {
+        var reg = new RegExp('[?&]' + name + '=([^&#]+)');
+        var query = url.match(reg);
+        return query ? query[1] : null;
+    }
+
+    function save_basic() {
+        console.log("保存用户基本信息");
+        var change_name = document.getElementById('user_name').value;
+        var change_age = document.getElementById("user_age").value;
+        var change_man_sex = document.getElementById("sex_man").getAttribute("value");
+        var change_woman_sex = document.getElementById("sex_woman").getAttribute("value");
+        var sex_value = "";
+        if (change_man_sex == "男") {
+            sex_value = "男";
+        } else if (change_woman_sex == '女') {
+            sex_value = "女";
+        }
+
+        var user_iphone = document.getElementById('user_iphone').value;
+        var user_QQ = document.getElementById('user_QQ').value;
+        
+        var json_data_basic = {
+            userId: location_userid,
+            userName: change_name,
+            userAge: change_age,
+            userPhone: user_iphone,
+            userQQ: user_QQ,
+            userSex: sex_value,
+            userImg:img_url
+        };
+        $.ajax({
+            url: 'http://binguo.online/users/change',
+            type: 'POST',
+            dataType: 'json',
+            data: json_data_basic,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+                console.log(data);
+                alert("保存成功");
+            }
+        });
+    }
+
+
+    $('#save_basic').click(save_basic);
+
+
+    var object_data = new Object();
+
+
+    function to_render(data) {
+ 
+        data = data.result;
+        $('#user_id').text(data.userId);
+        $('#user_name').attr("value", data.userName);
+        $('#brithday').attr("value", data.userAge);
+        $('#user_iphone').attr("value", data.userPhone);
+        $('#user_QQ').attr("value", data.userQQ);
+        $("#user_Number").text(data.userNumber);
+
+
+        if(data.userImg != undefined){
+            console.log(data.userImg);
+            $("#head_img").attr("src",data.userImg);
+            $("#user_small_img").attr("src",data.userImg);
+        }
+
+        if (data.userSex == "男") {
+            change_sex_man();
+        } else if (data.userSex == "女") {
+            change_sex_woman();
+        }
+        $('#user_center_id').text(data.userId);
+    }
+    var location_userid = "";
+    $(document).ready(function () {
+        var userId_value ="";
+         userId_value = getQueryByName(window.location.href, 'userId');
+        if(!userId_value){
+        	userId_value = getCookie("userId");
+        }
+        location_userid = userId_value;
+        console.log(userId_value);
+        var json_data = {
+            userId: userId_value
+        }
+        $.ajax({
+            url: "http://binguo.online/users/check",
+            type: 'GET',
+            dataType: 'json',
+            data: json_data,
+            success: function (data) {
+                console.log(data);
+                object_data = data;
+                if (data.status == 0) {
+                    console.log("查询成功");
+                    to_render(data);
+                }
+                else {
+                    alert("请先登录");
+                    window.location.href = "index.html";
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    })
+
+     
+
+    $(document).ready(function () {
+        //用户中心--
+        document.getElementsByClassName('left_aside_ul')[0].children[4].classList.add('class_js');
+
+        $('.user_icon09').parent().parent().click(function () {
+
+            $('.user_center01').css('display', 'none');
+            $('.user_center09').css('display', 'block');
+            $('.user_center02').css('display', 'none');
+        });
+        $('.user_icon02').parent().parent().click(function () {
+
+            $('.user_center01').css('display', 'none');
+            $('.user_center02').css('display', 'block');
+            $('.user_center09').css('display', 'none');
+        })
+    })
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            if ($(document).scrollTop() > 200) {
+
+                $('#top_fixed').css("display", "block");
+            }
+            else {
+                $('#top_fixed').css("display", "none");
+            }
+        })
+        
+
+
+
+
+    })
+
+    
+
+</script>
+<style>
+	.class_foucus{
+		color: white;
+		background: url('../img/icon_person01/dingdan2.png') no-repeat left center;
+	}
+</style>
+</body>
+</html>

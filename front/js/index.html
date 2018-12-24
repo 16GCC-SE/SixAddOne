@@ -8,9 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="../js/vendor/jquery-3.3.1.min.js"></script>
     <script src="../js/vendor/bootstrap.js"></script>
+ 
 </head>
 
-<body onload="checkCookie()">
+ 
+<body onload="checkCookie()" onkeydown="keylogin(event)">
 
 <div class="test_zhao">
 </div>
@@ -26,7 +28,7 @@
     <div id="hearder_right">
         <div id="zhuce">注册</div>
         <div id="denglu">登录</div>
-        <div id="user"><a href="../src/private_infomation.html">我的</a></div>
+        <div id="user"><a href="person01.html">我的</a></div>
     </div>
     <form class="form-inline">
         <div class="form-group">
@@ -40,11 +42,7 @@
     </form>
 </div>
 
-<style>
-    .Menu nav a{
-        font-size: 23px;
-    }
-</style>
+ 
 <div class="Menu">
 
     <nav>
@@ -63,7 +61,11 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
+<style>
+    .carousel-inner img{
+        width: 100%;
+    }
+</style>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
@@ -104,7 +106,7 @@
                         <i>校园自主创业</i>
                         &nbsp 欢迎进入
                     </span>
-                    <a href="../二手平台.html" class="three">查看 ></a>
+                    <a href="shopping.html" class="three">查看 ></a>
                     <span class="four"><img src="../img/校园商店.jpg"></span>
 
                 </li>
@@ -355,11 +357,9 @@
             data: json_data,
             contentType: "application/x-www-form-urlencoded",
             success: function (data) {
-
+                //请求成功：
                 if (data.status == 0) {
                     status = 0;
-                    console.log("登录成功");
-                    console.log(data);
                     hidden_zhao();
                     register_suc(data);
                     setCookie("userId", data.result.userId, 6);
@@ -446,7 +446,11 @@
 
         $('#icon_close').click(hidden_zhao);
     })
-
+    function keylogin(event){
+    if(event.keyCode = 13){
+        register_in()
+}
+}
 </script>
 </body>
 </html>

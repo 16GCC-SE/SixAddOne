@@ -1,0 +1,56 @@
+.title-img img {
+	width: 150px;
+}
+
+.title-img {
+	font-size: 25px;
+	color: #80a281;
+}
+
+.table th {
+	color: grey;
+	text-align: center
+}
+
+.table img {
+	width: 100px;
+}
+
+.table td {
+	font-size: 12px;
+	text-align: center
+}
+
+.navbar-header {
+	left: 60%;
+	position: relative;
+	width: 350px;
+	top: 15px;
+}
+ .auto {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .weizhi_title {
+        font-size: 15px;
+        color: #666666;
+        background: url(../img/坐标.png) no-repeat center left;
+        padding-left: 27px;
+        margin: 39px 0;
+    }
+
+    .weizhi_title a:hover {
+        color: #e83a17;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: red;
+    }
+    .form-inline{
+             top: 0; 
+     margin-top: none; 
+     position: none;
+     right: 0; 
+    }

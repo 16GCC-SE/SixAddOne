@@ -827,3 +827,6 @@ ul li span .two i{
         display: none;
         z-index: 10;
     }
+        .Menu nav a{
+        font-size: 23px;
+    }

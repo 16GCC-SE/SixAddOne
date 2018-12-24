@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="../js/vendor/public.js"></script>
 </head>
 <body>
 <div id="header">
@@ -19,9 +20,7 @@
     <div class="name" id="title_name">校园易平台</div>
     <div id="min_title">——让生活变得更美好</div>
 
-    <!-- <div class="search">
-        <i></i><input class="search_text form-control" type="text" name="" placeholder="请输入关键字"><button class="btn btn-danger" type="submit">确定</button>
-    </div> -->
+   
     <form class="form-inline">
         <div class="form-group">
             <label class="sr-only" for="exampleInputAmount"></label>
@@ -84,7 +83,7 @@
             <input id="userPwd02" type="password" placeholder="请再次输入密码" name="mimare" autocomplete="off">
         </div>
         <div class="list zhucexieyi">
-            <input type="checkbox" name="zhucexieyi" value="1" autocomplete="off" checked="checked">
+            <input id ="_checkbox" type="checkbox" name="zhucexieyi" value="1" autocomplete="off" checked="checked">
             <span>我已阅读并同意<font> &lt;&lt; 注册协议 &gt;&gt;</font></span>
         </div>
         <button id="reg_btn" type="button" class="reg_btn" onclick="instant_register()">立即注册</button>
@@ -174,20 +173,25 @@
 
 
     function instant_register() {
+        
+        if(!document.getElementById('_checkbox').checked){
+            return;
+        }
+
         var userName1 = document.getElementById('userName').value;
         var userPwd1 = document.getElementById('userPwd').value;
         var userPwd2 = document.getElementById('userPwd02').value;
         var userId1 = document.getElementById('userId').value;
         var userNumber1 = document.getElementById('userNumber').value;
 
+        if(userName1=="" || userPwd1==""|| userPwd2==""||userId1==""||userNumber1==""){
+            alert("请填写完整")
+        }
         if (userPwd1 != userPwd2) {
-            alert("2222");
+            alert("前后密码不一致");
             return;
         }
-        console.log(userId1);
-        console.log(userName1);
-        console.log(userNumber1);
-        console.log(userPwd1);
+
 
         var data = {
             userId: userId1,
@@ -208,6 +212,7 @@
                 if (response.status == 0) {
                     alert("注册成功！");
                     window.location.href = "index.html";
+                    setCookie("userId", userId1, 6);
                 }
                 if (response.status == 104) {
                     alert("该ID已被注册");

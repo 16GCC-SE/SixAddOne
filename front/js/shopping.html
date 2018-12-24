@@ -26,7 +26,11 @@
     html {
         height: auto;
     }
-
+       .user-name[data-v-4c853d07]{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 </style>
 </head>
 <body onload="checkCookie()" data-spm='1000261' class="clearfix">
@@ -64,14 +68,14 @@
             <div data-v-3fb25ee8="" class="main-wrap">
                 <div data-v-bf7d9412="" data-v-3fb25ee8="" class="navbar-wrap">
                     <div data-v-bf7d9412="" class="tab-wrap" style=" margin-left: -102px;">
-                        <div data-v-bf7d9412="" class="tab"><p data-v-bf7d9412="" class="tab-name">首页</p>
+                        <div data-v-bf7d9412="" class="tab"><p data-v-bf7d9412="" class="tab-name"><a href="index.html">首页</a><span></span></p>
                             <div data-v-bf7d9412="" class="tab-line"></div>
                         </div>
                         <div data-v-bf7d9412="" class="tab xz">
                             <div data-v-bf7d9412="" style="display: flex; flex-direction: row; align-items: center;"><span
                                 data-v-bf7d9412="" class="tab-name">
                                 我的闲置
-                            </span> <img data-v-bf7d9412="" class="icon-more"></div>
+                            </span> </div>
                             <div data-v-bf7d9412="" class="sublist">
                                 <div data-v-bf7d9412="" class="sub"><p data-v-bf7d9412="" class="name">出售中</p>
                                     <p data-v-bf7d9412="" class="num">0</p></div>
@@ -194,18 +198,17 @@
                                                 data: userId,
                                                 success: function (data) {
                                                     user_img_data = data.result.userImg;
-                                                    console.log(user_img_data);
-                                                    console.log(data);
+                                                    var random = parseInt(Math.random()*25+1);
                                                     a.innerHTML = "<div data-v-4c853d07='' class='item-img' style='background-image: url(" +
                                                     shop_list[i].goodsImg
                                                     + "); width: 200px;height: 200px;'" +
 
                                                     "></div> " +
-                                                    " <div data-v-4c853d07='' class='item-info'><p data-v-4c853d07='' class='item-title'>" + shop_list[i].goodsName + shop_list[i].goodsDetail +
+                                                    " <div data-v-4c853d07='' class='item-info'><p data-v-4c853d07='' class='item-title'>" + shop_list[i].goodsName +" &nbsp;"+ shop_list[i].goodsDetail +
                                                     " </p><div data-v-4c853d07='' class='price-line'>" +
                                                     "<div data-v-4c853d07='' class='price>" + "<p data-v-4c853d07='' class='price-unit'style='display: inline;color:#f44;'></p>￥" +
                                                     "<p data-v-4c853d07='' class='price-value' style='display: inline;'>" + shop_list[i].goodsPrice + "</p></div>" +
-                                                    "<p data-v-4c853d07='' class='want-num'>2人想要</p></div>" +
+                                                    "<p data-v-4c853d07='' class='want-num'>"+random +"人想要</p></div>" +
                                                     "</div><div data-v-4c853d07='' class='user-line'> " +
                                                     "   <div data-v-4c853d07='' class='user-info'>" + "<img style='width: 20px;height: 20px;border-radius:100%' data-v-4c853d07='' " +
                                                     " src='" + user_img_data + "'>" +
@@ -244,7 +247,7 @@
                     var shop_list = shop_data.list;
                     console.log(shop_list);
 
-                    for (let i = shop_list.length - 4; i > shop_list.length - 10; i--) {
+                    for (let i = shop_list.length-1 ; i > shop_list.length -8 ; i--) {
 
                         promise_fn(i, shop_list,"");
 
@@ -363,64 +366,7 @@
         <div class="list_class  new_store_class new_class" style="display: flex;">
      
 
-            <a data-v-4c853d07="" href="//2.taobao.com/item.htm?id=583806490080" target="_blank" class="item-wrap">
-                    <div data-v-4c853d07="" class="item-img"
-                    style="background-image: url(&quot;http://img.alicdn.com/bao/uploaded/i3/O1CN01pH2ivK1cCoSVID4EB_!!0-fleamarket.jpg&quot;);"></div>
-                    <div data-v-4c853d07="" class="item-info"><p data-v-4c853d07="" class="item-title">卡通手机壳 型号iphone x
-                        不要问我为什么不要了
-                        本手机壳控换手机壳比较勤快
-                        基本都是用过一周以内就换下来了
-                    很</p>
-                    <div data-v-4c853d07="" class="price-line">
-                        <div data-v-4c853d07="" class="price"><p data-v-4c853d07="" class="price-unit">￥</p>
-                            <p data-v-4c853d07="" class="price-value">10</p></div>
-                            <p data-v-4c853d07="" class="want-num">8人想要</p></div>
-                        </div>
-                        <div data-v-4c853d07="" class="user-line">
-                            <div data-v-4c853d07="" class="user-info"><img data-v-4c853d07=""
-                             src="http://img.alicdn.com/bao/uploaded/i2/O1CN011mwHv8Jk9j2iI8v_!!0-mytaobao.jpg"
-                             class="usericon">
-                             <p data-v-4c853d07="" class="user-name">c***3</p> <img data-v-4c853d07=""
-                             src="http://gw.alicdn.com/mt/TB1HCq9GN1YBuNjy1zcXXbNcXXa-168-24.png"
-                             class="user-tag"></div>
-                         </div>
-                     </a><a data-v-4c853d07="" href="//2.taobao.com/item.htm?id=583030890944" target="_blank" class="item-wrap">
-                        <div data-v-4c853d07="" class="item-img"
-                        style="background-image: url(&quot;http://img.alicdn.com/bao/uploaded/i4/O1CN01smR2QS27OUe1sMSpB_!!0-fleamarket.jpg&quot;);"></div>
-                        <div data-v-4c853d07="" class="item-info"><p data-v-4c853d07="" class="item-title">
-                        秋季ins工装裤男潮牌直筒休闲长裤日系韩版潮流男裤子 款式：颜色：黑色军绿色卡其色码数：MLXLXXL默认韵达快递！全新</p>
-                        <div data-v-4c853d07="" class="price-line">
-                            <div data-v-4c853d07="" class="price"><p data-v-4c853d07="" class="price-unit">￥</p>
-                                <p data-v-4c853d07="" class="price-value">39.90</p></div>
-                                <p data-v-4c853d07="" class="want-num">1人想要</p></div>
-                            </div>
-                            <div data-v-4c853d07="" class="user-line">
-                                <div data-v-4c853d07="" class="user-info"><img data-v-4c853d07=""
-                                 src="http://img.alicdn.com/bao/uploaded/i1/TB2HbTHDQOWBuNjSsppXXXPgpXa_!!0-fleamarket.jpg"
-                                 class="usericon">
-                                 <p data-v-4c853d07="" class="user-name">小***店</p> <img data-v-4c853d07=""
-                                 src="http://gw.alicdn.com/mt/TB1796pGL5TBuNjSspmXXaDRVXa-168-24.png"
-                                 class="user-tag"></div>
-                             </div>
-                         </a><a data-v-4c853d07="" href="//2.taobao.com/item.htm?id=583886171177" target="_blank" class="item-wrap">
-                            <div data-v-4c853d07="" class="item-img"
-                            style="background-image: url(&quot;http://img.alicdn.com/bao/uploaded/i4/O1CN01ONUCAd1hgBwWlLg8B_!!0-fleamarket.jpg&quot;);"></div>
-                            <div data-v-4c853d07="" class="item-info"><p data-v-4c853d07="" class="item-title">休闲裤
-                                清理衣柜不包邮，颜色是标签图片的橘黄色
-                            清理衣柜不包邮，颜色是标签图片的橘黄色</p>
-                            <div data-v-4c853d07="" class="price-line">
-                                <div data-v-4c853d07="" class="price"><p data-v-4c853d07="" class="price-unit">￥</p>
-                                    <p data-v-4c853d07="" class="price-value">5</p></div> <!----></div>
-                                </div>
-                                <div data-v-4c853d07="" class="user-line">
-                                    <div data-v-4c853d07="" class="user-info"><img data-v-4c853d07=""
-                                     src="http://gtms03.alicdn.com/tps/i3/TB1LFGeKVXXXXbCaXXX07tlTXXX-200-200.png"
-                                     class="usericon">
-                                     <p data-v-4c853d07="" class="user-name">稻***o</p> <img data-v-4c853d07=""
-                                     src="http://gw.alicdn.com/mt/TB1HCq9GN1YBuNjy1zcXXbNcXXa-168-24.png"
-                                     class="user-tag"></div>
-                                 </div>
-                             </a>
+            
                          </div>
                      </div>
                  </div>
@@ -623,7 +569,9 @@
     }
 
  
-
+    function sear_btn(goods_id){
+        window.location.href = "SubmitOrders.html?" + goods_id;
+    }
 
     var ajax_button = document.getElementById('ajax_button');
     ajax_button.addEventListener('click', register_in);
@@ -654,16 +602,39 @@
                 
                 $('.tip_div_ul').empty();
                 if (goods_name_list.length > 5) {
+
                     for (let i = 0; i < 5; i++) {
                         var tip_node = document.createElement('li');
-                        tip_node.innerHTML = goods_name_list[i].goodsName;
+                        var a_node = document.createElement('a');
+                     
+                        var a_url = "SubmitOrders.html?"+ goods_name_list[i]._id;
+                        a_node.setAttribute("href",a_url ) ;
+                        tip_node.append(a_node);
+                        tip_node.click(function() {
+                            sear_btn(goods_name_list[i]._id);
+                           
+                        });
+                        a_node.innerHTML =  goods_name_list[i].goodsName ;
+                        
                         $('.tip_div_ul').append(tip_node);
                     }
 
                 } else {
+                    
                     for (let i = 0; i < goods_name_list.length; i++) {
                         var tip_node = document.createElement('li');
-                        tip_node.innerHTML = goods_name_list[i].goodsName;
+                        var a_node = document.createElement('a');
+
+                        var a_url = "SubmitOrders.html?"+ goods_name_list[i]._id;
+                         
+                        a_node.href = a_url ;
+                        tip_node.append(a_node);
+
+                        tip_node.click(function() {
+                            sear_btn(goods_name_list[i]._id);
+                        });
+
+                        a_node.innerHTML = goods_name_list[i].goodsName;
                         $('.tip_div_ul').append(tip_node);
                     }
                 }
@@ -676,7 +647,9 @@
 
         })
     }
-   
+   function send_publish(){
+    
+   }
 </script>
 </body>
 </html>

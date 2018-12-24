@@ -7,69 +7,13 @@
     <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/modele.css">
+    <link rel="stylesheet" href="../css/gouwuche.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="../js/vendor/public.js"></script>
     <script src="../js/vendor/jquery-3.3.1.min.js"></script>
  
 
-<style type="text/css">
-.title-img img {
-	width: 150px;
-}
-
-.title-img {
-	font-size: 25px;
-	color: #80a281;
-}
-
-.table th {
-	color: grey;
-	text-align: center
-}
-
-.table img {
-	width: 100px;
-}
-
-.table td {
-	font-size: 12px;
-	text-align: center
-}
-
-.navbar-header {
-	left: 60%;
-	position: relative;
-	width: 350px;
-	top: 15px;
-}
- .auto {
-        width: 1200px;
-        margin: 0 auto;
-    }
-
-    .weizhi_title {
-        font-size: 15px;
-        color: #666666;
-        background: url(../img/坐标.png) no-repeat center left;
-        padding-left: 27px;
-        margin: 39px 0;
-    }
-
-    .weizhi_title a:hover {
-        color: #e83a17;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: red;
-    }
-    .form-inline{
-             top: 0; 
-     margin-top: none; 
-     position: none;
-     right: 0; 
-    }
-</style>
+ 
 </head>
 <body onload="checkCookie()">
 
@@ -102,7 +46,7 @@
 
  
 <div class="pro_wrap user_pro_wrap  auto">
-    <h2 class="weizhi_title">位置：<a href="/">首页</a> &gt; 用户中心</h2>
+    <h2 class="weizhi_title">位置：<a href="shopping.html">首页</a> &gt; 购物车</h2>
 </div>
 
  
@@ -422,12 +366,13 @@ function hidden_zhao() {
                                 <button type="button" id="delete_shop${i}" class="btn btn-danger">删除</button>
                                 <button type="button" class="btn btn-warning">移到收藏夹</button></td>
                         </tr>`); 
+
                 var delete_shop = "#delete_shop" + i ;
 
 
 
-                function shop_remove(){
-                     var data_json_delete = {
+        function shop_remove(){
+                var data_json_delete = {
                 userId : user_name_id,
                 goodsId : data_arr[i]._id
             }
@@ -437,12 +382,13 @@ function hidden_zhao() {
             type:'POST',
             dataType:'json',
             data:data_json_delete,
+
             success:function(data){
-                alert(data.msg);
+                alert("移除成功");
                 location.reload();
             }
         })
-                }
+        }
         $(delete_shop).click(function(){
         if(confirm("确定移出购物车吗？")){
 
@@ -498,7 +444,24 @@ function hidden_zhao() {
      $('#btn_topay').click(function(){
         if(confirm("确定支付？")){
 
-            confirm("支付成功！，  演示结束，谢谢大家~");
+        var data_json_clear = { userId : user_name_id};
+        $.ajax({
+            url:'http://binguo.online/users/cartdelall',
+            type:'POST',
+            dataType:'json',
+            data:data_json_clear,
+
+
+            success:function(){
+                location.reload();
+            },
+            error:function (err) {
+                console.log(err);
+            }
+
+          })
+         confirm("支付成功!  演示结束，谢谢大家~");
+
         }
         
      })

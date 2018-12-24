@@ -56,7 +56,7 @@
             <li><a  ><span class="user_icon02">发布</span></a></li>
             <li><a href="#"><span class="user_icon03">我的收藏</span></a></li>
             <li><a href="gouwuche.html"><span class="user_icon04">我的购物车</span></a></li>
-            <li><a href="#"><span class="user_icon05">我的记录</span></a></li>
+            <li><a href="new_person.html"><span class="user_icon05">我的店铺</span></a></li>
             <li><a href="#"><span class="user_icon06">我的订单</span></a></li>
             <li><a href="#"><span class="user_icon07">我的钱包</span></a></li>
             <li><a href="#"><span class="user_icon08">消息中心</span></a></li>
@@ -178,7 +178,7 @@
                                 var year = cur_time.getYear();
                                 var day = cur_time.getDate();
                                 var month = cur_time.getMonth() + 1;
-                                var str_time = year + "." + month + "." + day;
+                                var str_time = cur_time;
 
                                 var JSON_data = {
                                     goodsImg:goods_img,
@@ -659,6 +659,10 @@
     $(document).ready(function () {
         var userId_value = getQueryByName(window.location.href, 'userId');
         location_userid = userId_value;
+
+        if(!userId_value){
+            userId_value = getCookie("userId");
+        }
         console.log(userId_value);
         var json_data = {
             userId: userId_value
