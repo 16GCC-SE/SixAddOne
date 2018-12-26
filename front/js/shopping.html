@@ -596,10 +596,8 @@
             type: 'GET',
             dataType: 'json',
             data: data_json,
-            success: function (data) {
-                
+            success: function (data) { 
                 var goods_name_list = data.result;
-                
                 $('.tip_div_ul').empty();
                 if (goods_name_list.length > 5) {
 
@@ -647,9 +645,7 @@
 
         })
     }
-   function send_publish(){
-    
-   }
+
 </script>
 </body>
 </html>

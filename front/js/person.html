@@ -450,7 +450,6 @@
 
     };
      function save_user_pic() {
-      
         var file = document.getElementById('img_file').files[0];
         var formdata = new FormData();
         formdata.append("files",file);
@@ -463,15 +462,12 @@
                 processData: false,
                 success:function (datas) {
                     console.log(datas.responseText);
-                    
-                     
                 },
                 error:function (err) {
                     console.log(err.responseText);
                     img_url = err.responseText;
                     $("#head_img").attr("src",img_url);
                     $("#user_small_img").attr("src",img_url);
-                     
                 }
             })
             }else if (file.size<2*1024*1024) {
@@ -663,7 +659,7 @@
         if(!userId_value){
             userId_value = getCookie("userId");
         }
-        console.log(userId_value);
+         
         var json_data = {
             userId: userId_value
         }
